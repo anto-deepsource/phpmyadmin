@@ -174,7 +174,7 @@ jQuery.fn.extend( {
 
 // Create scrollLeft and scrollTop methods
 jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( method, prop ) {
-	var top = "pageYOffset" === prop;
+	var top = prop === "pageYOffset";
 
 	jQuery.fn[ method ] = function( val ) {
 		return access( this, function( elem, method, val ) {

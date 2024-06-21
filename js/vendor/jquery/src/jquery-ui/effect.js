@@ -215,7 +215,7 @@ function clamp( value, prop, allowEmpty ) {
 	}
 
 	// For now all property types without mod have min and max
-	return 0 > value ? 0 : type.max < value ? type.max : value;
+	return value < 0 ? 0 : type.max < value ? type.max : value;
 }
 
 function stringParse( string ) {

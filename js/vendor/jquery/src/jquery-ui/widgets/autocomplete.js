@@ -265,7 +265,7 @@ $.widget( "ui.autocomplete", {
 				}
 
 				item = ui.item.data( "ui-autocomplete-item" );
-				if ( false !== this._trigger( "focus", event, { item: item } ) ) {
+				if ( this._trigger( "focus", event, { item: item } ) !== false ) {
 
 					// use value to match what will end up in the input, if it was a key event
 					if ( event.originalEvent && /^key/.test( event.originalEvent.type ) ) {
@@ -298,7 +298,7 @@ $.widget( "ui.autocomplete", {
 					} );
 				}
 
-				if ( false !== this._trigger( "select", event, { item: item } ) ) {
+				if ( this._trigger( "select", event, { item: item } ) !== false ) {
 					this._value( item.value );
 				}
 

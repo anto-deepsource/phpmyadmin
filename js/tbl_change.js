@@ -682,15 +682,15 @@ AJAX.registerOnload('tbl_change.js', function () {
 
 function changeValueFieldType (elem, searchIndex) {
     var fieldsValue = $('select#fieldID_' + searchIndex);
-    if (0 === fieldsValue.size()) {
+    if (fieldsValue.size() === 0) {
         return;
     }
 
     var type = $(elem).val();
-    if ('IN (...)' === type ||
-        'NOT IN (...)' === type ||
-        'BETWEEN' === type ||
-        'NOT BETWEEN' === type
+    if (type === 'IN (...)' ||
+        type === 'NOT IN (...)' ||
+        type === 'BETWEEN' ||
+        type === 'NOT BETWEEN'
     ) {
         $('#fieldID_' + searchIndex).attr('multiple', '');
     } else {

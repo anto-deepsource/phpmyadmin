@@ -98,7 +98,7 @@ function getDropdownValues ($dropdown) {
                     // set values for the column dropdown
                     var primary = null;
                     if (typeof data.primary !== 'undefined'
-                        && 1 === data.primary.length
+                        && data.primary.length === 1
                     ) {
                         primary = data.primary[0];
                     }

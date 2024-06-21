@@ -483,13 +483,13 @@ AJAX.registerOnload('sql.js', function () {
                 // show a message that stays on screen
                 if (typeof data.action_bookmark !== 'undefined') {
                     // view only
-                    if ('1' === data.action_bookmark) {
+                    if (data.action_bookmark === '1') {
                         $('#sqlquery').text(data.sql_query);
                         // send to codemirror if possible
                         setQuery(data.sql_query);
                     }
                     // delete
-                    if ('2' === data.action_bookmark) {
+                    if (data.action_bookmark === '2') {
                         $('#id_bookmark option[value=\'' + data.id_bookmark + '\']').remove();
                         // if there are no bookmarked queries now (only the empty option),
                         // remove the bookmark section

@@ -4789,7 +4789,7 @@ function checkNumberOfFields () {
     if (typeof maxInputVars === 'undefined') {
         return false;
     }
-    if (false === maxInputVars) {
+    if (maxInputVars === false) {
         return false;
     }
     $('form').each(function () {
