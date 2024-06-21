@@ -49,7 +49,7 @@ return $.widget( "ui.mouse", {
 				return that._mouseDown( event );
 			} )
 			.on( "click." + this.widgetName, function( event ) {
-				if ( true === $.data( event.target, that.widgetName + ".preventClickEvent" ) ) {
+				if ( $.data( event.target, that.widgetName + ".preventClickEvent" ) === true ) {
 					$.removeData( event.target, that.widgetName + ".preventClickEvent" );
 					event.stopImmediatePropagation();
 					return false;
@@ -111,7 +111,7 @@ return $.widget( "ui.mouse", {
 		}
 
 		// Click event may never have fired (Gecko & Opera)
-		if ( true === $.data( event.target, this.widgetName + ".preventClickEvent" ) ) {
+		if ( $.data( event.target, this.widgetName + ".preventClickEvent" ) === true ) {
 			$.removeData( event.target, this.widgetName + ".preventClickEvent" );
 		}
 

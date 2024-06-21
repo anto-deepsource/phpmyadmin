@@ -143,7 +143,7 @@ var AJAX = {
      */
     lockPageHandler: function (event) {
         // Don't lock on enter.
-        if (0 === event.charCode) {
+        if (event.charCode === 0) {
             return;
         }
 

@@ -229,7 +229,7 @@
              ty = -Math.sin(this.angle) * this.width;
          }
          // 4th quadrant
-         else if ((0 < this.angle && this.angle <= Math.PI/2) || (-Math.PI*2 <= this.angle && this.angle <= -Math.PI*3/2)) {
+         else if ((this.angle > 0 && this.angle <= Math.PI/2) || (-Math.PI*2 <= this.angle && this.angle <= -Math.PI*3/2)) {
              tx = Math.sin(this.angle) * this.height;
              ty = 0;
          }
@@ -419,7 +419,7 @@
              ty = -Math.sin(this.angle) * this.width;
          }
          // 4th quadrant
-         else if ((0 < this.angle && this.angle <= Math.PI/2) || (-Math.PI*2 <= this.angle && this.angle <= -Math.PI*3/2)) {
+         else if ((this.angle > 0 && this.angle <= Math.PI/2) || (-Math.PI*2 <= this.angle && this.angle <= -Math.PI*3/2)) {
              tx = Math.sin(this.angle) * this.height;
              ty = 0;
          }

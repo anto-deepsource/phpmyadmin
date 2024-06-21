@@ -29,7 +29,7 @@ $.ui.focusable = function( element, hasTabindex ) {
 	var map, mapName, img, focusableIfVisible, fieldset,
 		nodeName = element.nodeName.toLowerCase();
 
-	if ( "area" === nodeName ) {
+	if ( nodeName === "area" ) {
 		map = element.parentNode;
 		mapName = map.name;
 		if ( !element.href || !mapName || map.nodeName.toLowerCase() !== "map" ) {
@@ -53,7 +53,7 @@ $.ui.focusable = function( element, hasTabindex ) {
 				focusableIfVisible = !fieldset.disabled;
 			}
 		}
-	} else if ( "a" === nodeName ) {
+	} else if ( nodeName === "a" ) {
 		focusableIfVisible = element.href || hasTabindex;
 	} else {
 		focusableIfVisible = hasTabindex;
