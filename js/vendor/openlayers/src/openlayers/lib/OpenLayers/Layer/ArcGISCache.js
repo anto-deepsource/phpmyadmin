@@ -146,7 +146,7 @@ OpenLayers.Layer.ArcGISCache = OpenLayers.Class(OpenLayers.Layer.XYZ, {
 
             // optional extended section based on whether or not the server returned
             // specific tile information
-            if (!!info.tileInfo) {            
+            if (info.tileInfo) {            
                 // either set the tiles based on rows/columns, or specific width/height
                 this.tileSize = new OpenLayers.Size(
                     info.tileInfo.width || info.tileInfo.cols, 
