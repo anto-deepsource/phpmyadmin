@@ -1945,7 +1945,7 @@ function buildToken(builder, text, style, startStyle, endStyle, title, css) {
 }
 
 function splitSpaces(text, trailingBefore) {
-  if (text.length > 1 && !/  /.test(text)) { return text }
+  if (text.length > 1 && !/ {2}/.test(text)) { return text }
   var spaceBefore = trailingBefore, result = ""
   for (var i = 0; i < text.length; i++) {
     var ch = text.charAt(i)
