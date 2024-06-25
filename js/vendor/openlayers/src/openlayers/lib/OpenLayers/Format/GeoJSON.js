@@ -186,7 +186,7 @@ OpenLayers.Format.GeoJSON = OpenLayers.Class(OpenLayers.Format.JSON, {
     parseFeature: function(obj) {
         var feature, geometry, attributes, bbox;
         attributes = (obj.properties) ? obj.properties : {};
-        bbox = (obj.geometry && obj.geometry.bbox) || obj.bbox;
+        bbox = (obj.geometry?.bbox) || obj.bbox;
         try {
             geometry = this.parseGeometry(obj.geometry);
         } catch(err) {
@@ -469,7 +469,7 @@ OpenLayers.Format.GeoJSON = OpenLayers.Class(OpenLayers.Format.JSON, {
             geojson = this.extract.geometry.apply(this, [obj]);
         } else if (obj instanceof OpenLayers.Feature.Vector) {
             geojson = this.extract.feature.apply(this, [obj]);
-            if(obj.layer && obj.layer.projection) {
+            if(obj.layer?.projection) {
                 geojson.crs = this.createCRSObject(obj);
             }
         }

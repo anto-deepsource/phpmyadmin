@@ -214,7 +214,7 @@ OpenLayers.Format.ArcXML = OpenLayers.Class(OpenLayers.Format.XML, {
         }
         
         var arcNode = null;
-        if (data && data.documentElement) {
+        if (data?.documentElement) {
             if(data.documentElement.nodeName == "ARCXML") {
                 arcNode = data.documentElement;
             } else {

@@ -61,7 +61,7 @@ OpenLayers.Format.Context = OpenLayers.Class(OpenLayers.Format.XML.VersionedOGC,
         var context = OpenLayers.Format.XML.VersionedOGC.prototype.read.apply(this, 
             arguments);
         var map;
-        if(options && options.map) {
+        if(options?.map) {
             this.context = context;
             if(options.map instanceof OpenLayers.Map) {
                 map = this.mergeContextToMap(context, options.map);

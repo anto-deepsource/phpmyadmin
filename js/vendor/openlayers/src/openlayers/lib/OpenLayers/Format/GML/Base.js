@@ -146,7 +146,7 @@ OpenLayers.Format.GML.Base = OpenLayers.Class(OpenLayers.Format.XML, {
     initialize: function(options) {
         OpenLayers.Format.XML.prototype.initialize.apply(this, [options]);
         this.setGeometryTypes();
-        if(options && options.featureNS) {
+        if(options?.featureNS) {
             this.setNamespace("feature", options.featureNS);
         }
         this.singleFeatureType = !options || (typeof options.featureType === "string");
