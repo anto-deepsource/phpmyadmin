@@ -87,7 +87,7 @@ OpenLayers.Geometry.LineString = OpenLayers.Class(OpenLayers.Geometry.Curve, {
                 seg1x2 = seg1.x2;
                 seg1y1 = seg1.y1;
                 seg1y2 = seg1.y2;
-                inner: for(var j=0, jlen=segs2.length; j<jlen; ++j) {
+                for(var j=0, jlen=segs2.length; j<jlen; ++j) {
                     seg2 = segs2[j];
                     if(seg2.x1 > seg1x2) {
                         // seg1 still left of seg2
