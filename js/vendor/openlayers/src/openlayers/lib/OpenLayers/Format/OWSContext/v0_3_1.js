@@ -150,7 +150,7 @@ OpenLayers.Format.OWSContext.v0_3_1 = OpenLayers.Class(OpenLayers.Format.XML, {
                 var layerContext = l.layersContext[i];
                 var nPath = [];
                 var nTitle = l.title || "";
-                if(l.metadata && l.metadata.nestingPath){
+                if(l.metadata?.nestingPath){
                     nPath = l.metadata.nestingPath.slice();
                 }
                 if (nTitle != "") {
@@ -322,7 +322,7 @@ OpenLayers.Format.OWSContext.v0_3_1 = OpenLayers.Class(OpenLayers.Format.XML, {
                 if (elements.length >= 1) {
                     el = elements[0];
                 }
-                if (el && el.firstChild) {
+                if (el?.firstChild) {
                     var featurenode = (el.firstChild.nextSibling) ? 
                         el.firstChild.nextSibling : el.firstChild;
                     this.setNamespace("feature", featurenode.namespaceURI);

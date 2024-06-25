@@ -142,7 +142,7 @@ OpenLayers.Handler.Point = OpenLayers.Class(OpenLayers.Handler, {
      *     cancel callback will receive a geometry.
      */
     initialize: function(control, callbacks, options) {
-        if(!(options && options.layerOptions && options.layerOptions.styleMap)) {
+        if(!(options?.layerOptions && options.layerOptions.styleMap)) {
             this.style = OpenLayers.Util.extend(OpenLayers.Feature.Vector.style['default'], {});
         }
 
@@ -332,7 +332,7 @@ OpenLayers.Handler.Point = OpenLayers.Class(OpenLayers.Handler, {
      * {<OpenLayers.Geometry.Point>}
      */
     getGeometry: function() {
-        var geometry = this.point && this.point.geometry;
+        var geometry = this.point?.geometry;
         if(geometry && this.multi) {
             geometry = new OpenLayers.Geometry.MultiPoint([geometry]);
         }
@@ -348,7 +348,7 @@ OpenLayers.Handler.Point = OpenLayers.Class(OpenLayers.Handler, {
      */
     geometryClone: function() {
         var geom = this.getGeometry();
-        return geom && geom.clone();
+        return geom?.clone();
     },
 
     /**
@@ -499,7 +499,7 @@ OpenLayers.Handler.Point = OpenLayers.Class(OpenLayers.Handler, {
             return true;
         }
         // ignore double-clicks
-        if (this.lastUp && this.lastUp.equals(evt.xy)) {
+        if (this.lastUp?.equals(evt.xy)) {
             return true;
         }
         if (this.lastDown && this.passesTolerance(this.lastDown, evt.xy,

@@ -358,7 +358,7 @@ OpenLayers.Event = {
         if (foundEntry) {
             if (element.removeEventListener) {
                 element.removeEventListener(name, observer, useCapture);
-            } else if (element && element.detachEvent) {
+            } else if (element?.detachEvent) {
                 element.detachEvent('on' + name, observer);
             }
         }
@@ -374,7 +374,7 @@ OpenLayers.Event = {
         // check for OpenLayers.Event before checking for observers, because
         // OpenLayers.Event may be undefined in IE if no map instance was
         // created
-        if (OpenLayers.Event && OpenLayers.Event.observers) {
+        if (OpenLayers.Event?.observers) {
             for (var cacheID in OpenLayers.Event.observers) {
                 var elementObservers = OpenLayers.Event.observers[cacheID];
                 OpenLayers.Event._removeElementObservers.apply(this, 
@@ -903,7 +903,7 @@ OpenLayers.Events = OpenLayers.Class({
         }
         // add clientX & clientY to all events - corresponds to average x, y
         var touches = evt.touches;
-        if (touches && touches[0]) {
+        if (touches?.[0]) {
             var x = 0;
             var y = 0;
             var num = touches.length;
