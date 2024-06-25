@@ -29,7 +29,7 @@ class ExportMediawikiTest extends \PMATestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['server'] = 0;
         $GLOBALS['output_kanji_conversion'] = false;

@@ -29,7 +29,7 @@ class ExportHtmlwordTest extends \PMATestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['server'] = 0;
         $this->object = new ExportHtmlword();
