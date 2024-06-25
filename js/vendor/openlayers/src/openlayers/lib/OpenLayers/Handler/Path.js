@@ -299,7 +299,7 @@ OpenLayers.Handler.Path = OpenLayers.Class(OpenLayers.Handler.Point, {
      * {Boolean} A point was added.
      */
     redo: function() {
-        var target = this.redoStack && this.redoStack.pop();
+        var target = this.redoStack?.pop();
         if (target) {
             this.line.geometry.addComponent(target, this.getCurrentPointIndex());
             this.drawFeature();
@@ -369,7 +369,7 @@ OpenLayers.Handler.Path = OpenLayers.Class(OpenLayers.Handler.Point, {
      * {<OpenLayers.Geometry.LineString>}
      */
     getGeometry: function() {
-        var geometry = this.line && this.line.geometry;
+        var geometry = this.line?.geometry;
         if(geometry && this.multi) {
             geometry = new OpenLayers.Geometry.MultiLineString([geometry]);
         }
