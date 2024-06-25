@@ -184,7 +184,7 @@ OpenLayers.Geometry.LineString = OpenLayers.Class(OpenLayers.Geometry.Curve, {
      */
     splitWithSegment: function(seg, options) {
         var edge = !(options && options.edge === false);
-        var tolerance = options && options.tolerance;
+        var tolerance = options?.tolerance;
         var lines = [];
         var verts = this.getVertices();
         var points = [];
@@ -281,7 +281,7 @@ OpenLayers.Geometry.LineString = OpenLayers.Class(OpenLayers.Geometry.Curve, {
      */
     split: function(target, options) {
         var results = null;
-        var mutual = options && options.mutual;
+        var mutual = options?.mutual;
         var sourceSplit, targetSplit, sourceParts, targetParts;
         if(target instanceof OpenLayers.Geometry.LineString) {
             var verts = this.getVertices();

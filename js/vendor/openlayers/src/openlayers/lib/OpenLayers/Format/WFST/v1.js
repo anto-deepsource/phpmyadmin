@@ -97,9 +97,9 @@ OpenLayers.Format.WFST.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
      * Method: getSrsName
      */
     getSrsName: function(feature, options) {
-        var srsName = options && options.srsName;
+        var srsName = options?.srsName;
         if(!srsName) {
-            if(feature && feature.layer) {
+            if(feature?.layer) {
                 srsName = feature.layer.projection.getCode();
             } else {
                 srsName = this.srsName;
@@ -226,9 +226,9 @@ OpenLayers.Format.WFST.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
                     attributes: {
                         service: "WFS",
                         version: this.version,
-                        handle: options && options.handle,
-                        outputFormat: options && options.outputFormat,
-                        maxFeatures: options && options.maxFeatures,
+                        handle: options?.handle,
+                        outputFormat: options?.outputFormat,
+                        maxFeatures: options?.maxFeatures,
                         "xsi:schemaLocation": this.schemaLocationAttr(options)
                     }
                 });
@@ -302,7 +302,7 @@ OpenLayers.Format.WFST.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
                 var options = obj.options;
                 var node = this.createElementNSPlus("wfs:Insert", {
                     attributes: {
-                        handle: options && options.handle
+                        handle: options?.handle
                     }
                 });
                 this.srsName = this.getSrsName(feature);
@@ -314,7 +314,7 @@ OpenLayers.Format.WFST.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
                 var options = obj.options;
                 var node = this.createElementNSPlus("wfs:Update", {
                     attributes: {
-                        handle: options && options.handle,
+                        handle: options?.handle,
                         typeName: (this.featureNS ? this.featurePrefix + ":" : "") +
                             this.featureType
                     }
@@ -377,7 +377,7 @@ OpenLayers.Format.WFST.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
                 var options = obj.options;
                 var node = this.createElementNSPlus("wfs:Delete", {
                     attributes: {
-                        handle: options && options.handle,
+                        handle: options?.handle,
                         typeName: (this.featureNS ? this.featurePrefix + ":" : "") +
                             this.featureType
                     }

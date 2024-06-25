@@ -68,7 +68,7 @@ OpenLayers.Geometry.MultiLineString = OpenLayers.Class(
      */
     split: function(geometry, options) {
         var results = null;
-        var mutual = options && options.mutual;
+        var mutual = options?.mutual;
         var splits, sourceLine, sourceLines, sourceSplit, targetSplit;
         var sourceParts = [];
         var targetParts = [geometry];
@@ -173,7 +173,7 @@ OpenLayers.Geometry.MultiLineString = OpenLayers.Class(
      */
     splitWith: function(geometry, options) {
         var results = null;
-        var mutual = options && options.mutual;
+        var mutual = options?.mutual;
         var splits, targetLine, sourceLines, sourceSplit, targetSplit, sourceParts, targetParts;
         if(geometry instanceof OpenLayers.Geometry.LineString) {
             targetParts = [];

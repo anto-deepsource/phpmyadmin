@@ -244,13 +244,13 @@ OpenLayers.Format.WMSCapabilities.v1 = OpenLayers.Class(
                     capability = obj;
                 }
                 var attrNode = node.getAttributeNode("queryable");
-                var queryable = (attrNode && attrNode.specified) ? 
+                var queryable = (attrNode?.specified) ? 
                     node.getAttribute("queryable") : null;
                 attrNode = node.getAttributeNode("cascaded");
-                var cascaded = (attrNode && attrNode.specified) ?
+                var cascaded = (attrNode?.specified) ?
                     node.getAttribute("cascaded") : null;
                 attrNode = node.getAttributeNode("opaque");
-                var opaque = (attrNode && attrNode.specified) ?
+                var opaque = (attrNode?.specified) ?
                     node.getAttribute('opaque') : null;
                 var noSubsets = node.getAttribute('noSubsets');
                 var fixedWidth = node.getAttribute('fixedWidth');

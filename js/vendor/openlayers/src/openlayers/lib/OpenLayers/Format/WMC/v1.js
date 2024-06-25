@@ -1205,7 +1205,7 @@ OpenLayers.Format.WMC.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
                     var doc = OpenLayers.Format.XML.prototype.read.apply(this, [s.body]);
                     // append to StyledLayerDescriptor node
                     var imported = doc.documentElement;
-                    if(sld.ownerDocument && sld.ownerDocument.importNode) {
+                    if(sld.ownerDocument?.importNode) {
                         imported = sld.ownerDocument.importNode(imported, true);
                     }
                     sld.appendChild(imported);
