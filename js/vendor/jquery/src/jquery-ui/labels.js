@@ -28,7 +28,7 @@ return $.fn.labels = function() {
 	var ancestor, selector, id, labels, ancestors;
 
 	// Check control.labels first
-	if ( this[ 0 ].labels && this[ 0 ].labels.length ) {
+	if ( this[ 0 ].labels?.length ) {
 		return this.pushStack( this[ 0 ].labels );
 	}
 
