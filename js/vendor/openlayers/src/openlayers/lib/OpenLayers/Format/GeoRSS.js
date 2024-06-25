@@ -240,7 +240,7 @@ OpenLayers.Format.GeoRSS = OpenLayers.Class(OpenLayers.Format.XML, {
     _getChildValue: function(node, nsuri, name, def) {
         var value;
         var eles = this.getElementsByTagNameNS(node, nsuri, name);
-        if(eles && eles[0] && eles[0].firstChild
+        if(eles?.[0] && eles[0].firstChild
             && eles[0].firstChild.nodeValue) {
             value = this.getChildValue(eles[0]);
         } else {

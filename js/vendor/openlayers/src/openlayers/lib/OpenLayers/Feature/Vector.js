@@ -192,7 +192,7 @@ OpenLayers.Feature.Vector = OpenLayers.Class(OpenLayers.Feature, {
      */
     onScreen:function(boundsOnly) {
         var onScreen = false;
-        if(this.layer && this.layer.map) {
+        if(this.layer?.map) {
             var screenBounds = this.layer.map.getExtent();
             if(boundsOnly) {
                 var featureBounds = this.geometry.getBounds();
@@ -221,7 +221,7 @@ OpenLayers.Feature.Vector = OpenLayers.Class(OpenLayers.Feature, {
     getVisibility: function() {
         return !(this.style && this.style.display == 'none' ||
                  !this.layer ||
-                 this.layer && this.layer.styleMap &&
+                 this.layer?.styleMap &&
                  this.layer.styleMap.createSymbolizer(this, this.renderIntent).display == 'none' ||
                  this.layer && !this.layer.getVisibility());
     },

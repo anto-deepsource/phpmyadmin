@@ -108,7 +108,7 @@ OpenLayers.Filter.Spatial = OpenLayers.Class(OpenLayers.Filter, {
      */
     clone: function() {
         var options = OpenLayers.Util.applyDefaults({
-            value: this.value && this.value.clone && this.value.clone()
+            value: this.value?.clone && this.value.clone()
         }, this);
         return new OpenLayers.Filter.Spatial(options);
     },
