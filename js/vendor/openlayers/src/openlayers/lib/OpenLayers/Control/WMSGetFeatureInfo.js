@@ -336,7 +336,7 @@ OpenLayers.Control.WMSGetFeatureInfo = OpenLayers.Class(OpenLayers.Control, {
         // this assumes that all layers will be available in this projection
         var projection = this.map.getProjection();
         var layerProj = firstLayer.projection;
-        if (layerProj && layerProj.equals(this.map.getProjectionObject())) {
+        if (layerProj?.equals(this.map.getProjectionObject())) {
             projection = layerProj.getCode();
         }
         var params = OpenLayers.Util.extend({

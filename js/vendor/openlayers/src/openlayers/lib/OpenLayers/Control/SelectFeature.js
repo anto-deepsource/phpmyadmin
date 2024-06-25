@@ -357,8 +357,7 @@ OpenLayers.Control.SelectFeature = OpenLayers.Class(OpenLayers.Control, {
      * {Boolean} Allow for multiple selected features.
      */
     multipleSelect: function() {
-        return this.multiple || (this.handlers.feature.evt &&
-                                 this.handlers.feature.evt[this.multipleKey]);
+        return this.multiple || (this.handlers.feature.evt?.[this.multipleKey]);
     },
     
     /**
@@ -370,8 +369,7 @@ OpenLayers.Control.SelectFeature = OpenLayers.Class(OpenLayers.Control, {
      * {Boolean} Toggle the selected state of a feature.
      */
     toggleSelect: function() {
-        return this.toggle || (this.handlers.feature.evt &&
-                               this.handlers.feature.evt[this.toggleKey]);
+        return this.toggle || (this.handlers.feature.evt?.[this.toggleKey]);
     },
 
     /**

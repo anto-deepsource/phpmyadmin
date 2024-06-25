@@ -239,7 +239,7 @@ OpenLayers.Control.Split = OpenLayers.Class(OpenLayers.Control, {
     deactivate: function() {
         var deactivated = OpenLayers.Control.prototype.deactivate.call(this);
         if(deactivated) {
-            if(this.source && this.source.events) {
+            if(this.source?.events) {
                 this.source.events.un({
                     sketchcomplete: this.onSketchComplete,
                     afterfeaturemodified: this.afterFeatureModified,
@@ -347,7 +347,7 @@ OpenLayers.Control.Split = OpenLayers.Class(OpenLayers.Control, {
         var targetSplit = false;
         if(!this.sourceFilter ||
            this.sourceFilter.evaluate(feature.attributes)) {
-            var features = this.layer && this.layer.features || [];
+            var features = this.layer?.features || [];
             var target, results, proceed;
             var additions = [], removals = [];
             var mutual = (this.layer === this.source) && this.mutual;
