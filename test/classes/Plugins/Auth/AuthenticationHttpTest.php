@@ -29,7 +29,7 @@ class AuthenticationHttpTest extends \PMATestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['PMA_Config'] = new Config();
         $GLOBALS['PMA_Config']->enableBc();

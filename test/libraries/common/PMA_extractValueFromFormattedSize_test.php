@@ -30,7 +30,7 @@ class PMA_ExtractValueFromFormattedSize_Test extends PHPUnit_Framework_TestCase
      *
      * @dataProvider provider
      */
-    function testExtractValueFromFormattedSize($size, $expected)
+    public function testExtractValueFromFormattedSize($size, $expected)
     {
         $this->assertEquals(
             $expected,
