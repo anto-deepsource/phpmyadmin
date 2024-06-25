@@ -93,7 +93,7 @@ OpenLayers.Format.GML.v3 = OpenLayers.Class(OpenLayers.Format.GML.Base, {
             "_inherit": function(node, obj, container) {
                 // SRSReferenceGroup attributes
                 var dim = parseInt(node.getAttribute("srsDimension"), 10) ||
-                    (container && container.srsDimension);
+                    (container?.srsDimension);
                 if (dim) {
                     obj.srsDimension = dim;
                 }

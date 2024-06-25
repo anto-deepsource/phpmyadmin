@@ -108,7 +108,7 @@ OpenLayers.Layer.Markers = OpenLayers.Class(OpenLayers.Layer, {
             marker.setOpacity(this.opacity);
         }
 
-        if (this.map && this.map.getExtent()) {
+        if (this.map?.getExtent()) {
             marker.map = this.map;
             this.drawMarker(marker);
         }
@@ -121,7 +121,7 @@ OpenLayers.Layer.Markers = OpenLayers.Class(OpenLayers.Layer, {
      * marker - {<OpenLayers.Marker>} 
      */
     removeMarker: function(marker) {
-        if (this.markers && this.markers.length) {
+        if (this.markers?.length) {
             OpenLayers.Util.removeItem(this.markers, marker);
             marker.erase();
         }

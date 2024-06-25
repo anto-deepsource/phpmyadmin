@@ -1211,7 +1211,7 @@ OpenLayers.Format.KML = OpenLayers.Class(OpenLayers.Format.XML, {
     createPlacemarkXML: function(feature) {        
         // Placemark name
         var placemarkName = this.createElementNS(this.kmlns, "name");
-        var label = (feature.style && feature.style.label) ? feature.style.label : feature.id;
+        var label = (feature.style?.label) ? feature.style.label : feature.id;
         var name = feature.attributes.name || label;
         placemarkName.appendChild(this.createTextNode(name));
 

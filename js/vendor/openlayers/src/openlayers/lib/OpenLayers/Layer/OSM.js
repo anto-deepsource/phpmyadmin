@@ -104,7 +104,7 @@ OpenLayers.Layer.OSM = OpenLayers.Class(OpenLayers.Layer.XYZ, {
         OpenLayers.Layer.XYZ.prototype.initialize.apply(this, arguments);
         this.tileOptions = OpenLayers.Util.extend({
             crossOriginKeyword: 'anonymous'
-        }, this.options && this.options.tileOptions);
+        }, this.options?.tileOptions);
     },
 
     /**

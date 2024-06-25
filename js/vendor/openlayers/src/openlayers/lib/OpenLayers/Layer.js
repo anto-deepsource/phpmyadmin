@@ -501,7 +501,7 @@ OpenLayers.Layer = OpenLayers.Class({
         
         // get the units from the projection, if we have a projection
         // and it it has units
-        if(this.projection && this.projection.getUnits()) {
+        if(this.projection?.getUnits()) {
             this.units = this.projection.getUnits();
         }
 
