@@ -80,7 +80,7 @@ class PageSettingsTest extends \PMATestCase
      *
      * @return void
      */
-    function testGetNaviSettings()
+    public function testGetNaviSettings()
     {
         $html = PageSettings::getNaviSettings();
 

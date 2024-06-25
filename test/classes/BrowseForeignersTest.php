@@ -32,7 +32,7 @@ class BrowseForeignersTest extends TestCase
      *
      * @return void
      */
-    function testGetForeignLimit()
+    public function testGetForeignLimit()
     {
         $this->assertNull(
             BrowseForeigners::getForeignLimit('Show all')
@@ -68,7 +68,7 @@ class BrowseForeignersTest extends TestCase
      *
      * @return void
      */
-    function testGetHtmlForShowAll()
+    public function testGetHtmlForShowAll()
     {
         $this->assertEquals(
             '',
@@ -107,7 +107,7 @@ class BrowseForeignersTest extends TestCase
      *
      * @return void
      */
-    function testGetHtmlForGotoPage()
+    public function testGetHtmlForGotoPage()
     {
         $this->assertEquals(
             '',
@@ -159,7 +159,7 @@ class BrowseForeignersTest extends TestCase
      *
      * @return void
      */
-    function testGetHtmlForColumnElement()
+    public function testGetHtmlForColumnElement()
     {
         $cssClass = '';
         $isSelected = false;
@@ -213,7 +213,7 @@ class BrowseForeignersTest extends TestCase
      *
      * @return void
      */
-    function testGetDescriptionAndTitle()
+    public function testGetDescriptionAndTitle()
     {
         $GLOBALS['cfg']['LimitChars'] = 30;
         $desc = 'foobar<baz';
@@ -236,7 +236,7 @@ class BrowseForeignersTest extends TestCase
      *
      * @return void
      */
-    function testGetHtmlForRelationalFieldSelection()
+    public function testGetHtmlForRelationalFieldSelection()
     {
         $db = '';
         $table = '';
