@@ -153,7 +153,7 @@ OpenLayers.Marker = OpenLayers.Class({
      * {Boolean} Whether or not the marker is drawn.
      */
     isDrawn: function() {
-        var isDrawn = (this.icon && this.icon.isDrawn());
+        var isDrawn = (this.icon?.isDrawn());
         return isDrawn;   
     },
 

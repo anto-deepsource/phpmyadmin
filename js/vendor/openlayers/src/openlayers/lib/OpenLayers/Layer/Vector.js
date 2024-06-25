@@ -361,7 +361,7 @@ OpenLayers.Layer.Vector = OpenLayers.Class(OpenLayers.Layer, {
             var renderer = (typeof rendererClass == "function") ?
                 rendererClass :
                 OpenLayers.Renderer[rendererClass];
-            if (renderer && renderer.prototype.supported()) {
+            if (renderer?.prototype.supported()) {
                 this.renderer = new renderer(this.div, this.rendererOptions);
                 break;
             }  
@@ -927,7 +927,7 @@ OpenLayers.Layer.Vector = OpenLayers.Class(OpenLayers.Layer, {
             foundFeatures = [];
         for(i = 0; i < len; i++) {            
             feature = this.features[i];
-            if(feature && feature.attributes) {
+            if(feature?.attributes) {
                 if (feature.attributes[attrName] === attrValue) {
                     foundFeatures.push(feature);
                 }

@@ -177,8 +177,7 @@ OpenLayers.Layer.WMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
     reverseAxisOrder: function() {
         var projCode = this.projection.getCode();
         return parseFloat(this.params.VERSION) >= 1.3 && 
-            !!(this.yx[projCode] || (OpenLayers.Projection.defaults[projCode] && 
-            OpenLayers.Projection.defaults[projCode].yx));
+            !!(this.yx[projCode] || (OpenLayers.Projection.defaults[projCode]?.yx));
     },
     
     /**
@@ -245,7 +244,7 @@ OpenLayers.Layer.WMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      */
     getFullRequestString:function(newParams, altUrl) {
         var mapProjection = this.map.getProjectionObject();
-        var projectionCode = this.projection && this.projection.equals(mapProjection) ?
+        var projectionCode = this.projection?.equals(mapProjection) ?
             this.projection.getCode() :
             mapProjection.getCode();
         var value = (projectionCode == "none") ? null : projectionCode;

@@ -154,7 +154,7 @@ OpenLayers.Layer.UTFGrid = OpenLayers.Class(OpenLayers.Layer.XYZ, {
     getFeatureInfo: function(location) {
         var info = null;
         var tileInfo = this.getTileData(location);
-        if (tileInfo && tileInfo.tile) {
+        if (tileInfo?.tile) {
             info = tileInfo.tile.getFeatureInfo(tileInfo.i, tileInfo.j);
         }
         return info;

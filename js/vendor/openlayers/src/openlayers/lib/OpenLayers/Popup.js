@@ -772,7 +772,7 @@ OpenLayers.Popup = OpenLayers.Class({
         //make sure the desired size to set doesn't result in a popup that 
         // is bigger than the map's viewport.
         //
-        if (this.map && this.map.size) {
+        if (this.map?.size) {
             
             var extraX = 0, extraY = 0;
             if (this.keepInMap && !this.panMapIfOutOfView) {

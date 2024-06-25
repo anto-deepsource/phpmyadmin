@@ -548,7 +548,7 @@ OpenLayers.Map = OpenLayers.Class({
         // If only one argument is provided, check if it is an object.
         if(arguments.length === 1 && typeof div === "object") {
             options = div;
-            div = options && options.div;
+            div = options?.div;
         }
 
         // Simple-type defaults are set in class definition. 
@@ -705,7 +705,7 @@ OpenLayers.Map = OpenLayers.Class({
         OpenLayers.Event.observe(window, 'unload', this.unloadDestroy);
         
         // add any initial layers
-        if (options && options.layers) {
+        if (options?.layers) {
             /** 
              * If you have set options.center, the map center property will be
              * set at this point.  However, since setCenter has not been called,
@@ -828,7 +828,7 @@ OpenLayers.Map = OpenLayers.Class({
             } 
             this.layers = null;
         }
-        if (this.viewPortDiv && this.viewPortDiv.parentNode) {
+        if (this.viewPortDiv?.parentNode) {
             this.viewPortDiv.parentNode.removeChild(this.viewPortDiv);
         }
         this.viewPortDiv = null;
@@ -1853,7 +1853,7 @@ OpenLayers.Map = OpenLayers.Class({
      * <baseLayer>'s maxExtent.
      */
     adjustZoom: function(zoom) {
-        if (this.baseLayer && this.baseLayer.wrapDateLine) {
+        if (this.baseLayer?.wrapDateLine) {
             var resolution, resolutions = this.baseLayer.resolutions,
                 maxResolution = this.getMaxExtent().getWidth() / this.size.w;
             if (this.getResolutionForZoom(zoom) > maxResolution) {
@@ -2201,7 +2201,7 @@ OpenLayers.Map = OpenLayers.Class({
      */
     getMaxExtent: function (options) {
         var maxExtent = null;
-        if(options && options.restricted && this.restrictedExtent){
+        if(options?.restricted && this.restrictedExtent){
             maxExtent = this.restrictedExtent;
         } else if (this.baseLayer != null) {
             maxExtent = this.baseLayer.maxExtent;

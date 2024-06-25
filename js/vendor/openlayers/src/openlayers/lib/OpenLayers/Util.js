@@ -1545,7 +1545,7 @@ OpenLayers.Util.getRenderedDimensions = function(contentHTML, size, options) {
     var container = document.createElement("div");
     container.style.visibility = "hidden";
         
-    var containerElement = (options && options.containerElement) 
+    var containerElement = (options?.containerElement) 
         ? options.containerElement : document.body;
     
     // Opera and IE7 can't handle a node with position:aboslute if it inherits
@@ -1587,7 +1587,7 @@ OpenLayers.Util.getRenderedDimensions = function(contentHTML, size, options) {
     }
 
     //add css classes, if specified
-    if (options && options.displayClass) {
+    if (options?.displayClass) {
         container.className = options.displayClass;
     }
     
