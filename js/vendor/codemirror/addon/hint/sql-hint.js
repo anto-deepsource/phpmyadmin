@@ -65,7 +65,7 @@
 
   function shallowClone(object) {
     var result = {};
-    for (var key in object) if (object.hasOwnProperty(key))
+    for (var key in object) if (Object.prototype.hasOwnProperty.call(object, key))
       result[key] = object[key];
     return result;
   }
@@ -81,7 +81,7 @@
       for (var i = 0; i < wordlist.length; i++)
         if (match(search, wordlist[i])) result.push(formatter(wordlist[i]))
     } else {
-      for (var word in wordlist) if (wordlist.hasOwnProperty(word)) {
+      for (var word in wordlist) if (Object.prototype.hasOwnProperty.call(wordlist, word)) {
         var val = wordlist[word]
         if (!val || val === true)
           val = word

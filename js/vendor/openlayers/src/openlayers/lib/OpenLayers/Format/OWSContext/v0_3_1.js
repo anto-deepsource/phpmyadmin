@@ -469,7 +469,7 @@ OpenLayers.Format.OWSContext.v0_3_1 = OpenLayers.Class(OpenLayers.Format.XML, {
                     name: layer.params.LAYERS,
                     queryable: layer.queryable ? "1" : "0",
                     hidden: layer.visibility ? "0" : "1",
-                    opacity: layer.hasOwnProperty("opacity") ? layer.opacity : null}
+                    opacity: Object.prototype.hasOwnProperty.call(layer, 'opacity') ? layer.opacity : null}
                 });
                 this.writeNode("ows:Title", layer.name, node);
                 this.writeNode("ows:OutputFormat", layer.params.FORMAT, node);

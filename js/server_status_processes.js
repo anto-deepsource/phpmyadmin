@@ -52,7 +52,7 @@ var processList = {
         var $tr = $(this).closest('tr');
         $.getJSON(url, function (data) {
             // Check if process was killed or not.
-            if (data.hasOwnProperty('success') && data.success) {
+            if (Object.prototype.hasOwnProperty.call(data, 'success') && data.success) {
                 // remove the row of killed process.
                 $tr.remove();
                 // As we just removed a row, reapply odd-even classes
@@ -89,7 +89,7 @@ var processList = {
             processList.refreshRequest = $.get(processList.refreshUrl,
                 urlParams,
                 function (data) {
-                    if (data.hasOwnProperty('success') && data.success) {
+                    if (Object.prototype.hasOwnProperty.call(data, 'success') && data.success) {
                         $newTable = $(data.message);
                         $('#tableprocesslist').html($newTable.html());
                         PMA_highlightSQL($('#tableprocesslist'));

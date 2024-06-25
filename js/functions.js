@@ -1997,14 +1997,14 @@ function codemirrorAutocompleteOnInputRead (instance) {
                         sql_autocomplete_default_table = PMA_commonParams.get('table');
                         sql_autocomplete = [];
                         for (var table in tables) {
-                            if (tables.hasOwnProperty(table)) {
+                            if (Object.prototype.hasOwnProperty.call(tables, table)) {
                                 var columns = tables[table];
                                 table = {
                                     text: table,
                                     columns: []
                                 };
                                 for (var column in columns) {
-                                    if (columns.hasOwnProperty(column)) {
+                                    if (Object.prototype.hasOwnProperty.call(columns, column)) {
                                         var displayText = columns[column].Type;
                                         if (columns[column].Key === 'PRI') {
                                             displayText += ' | Primary';

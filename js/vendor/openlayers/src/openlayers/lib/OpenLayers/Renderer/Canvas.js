@@ -854,7 +854,7 @@ OpenLayers.Renderer.Canvas = OpenLayers.Class(OpenLayers.Renderer, {
             var feature, geometry, style;
             var worldBounds = (this.map.baseLayer && this.map.baseLayer.wrapDateLine) && this.map.getMaxExtent();
             for (var id in this.features) {
-                if (!this.features.hasOwnProperty(id)) { continue; }
+                if (!Object.prototype.hasOwnProperty.call(this.features, id)) { continue; }
                 feature = this.features[id][0];
                 geometry = feature.geometry;
                 this.calculateFeatureDx(geometry.getBounds(), worldBounds);

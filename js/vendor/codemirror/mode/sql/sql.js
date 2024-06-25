@@ -106,12 +106,12 @@ CodeMirror.defineMode("sql", function(config, parserConfig) {
       var word = stream.current().toLowerCase();
       // dates (standard SQL syntax)
       // ref: http://dev.mysql.com/doc/refman/5.5/en/date-and-time-literals.html
-      if (dateSQL.hasOwnProperty(word) && (stream.match(/^( )+'[^']*'/) || stream.match(/^( )+"[^"]*"/)))
+      if (Object.prototype.hasOwnProperty.call(dateSQL, word) && (stream.match(/^( )+'[^']*'/) || stream.match(/^( )+"[^"]*"/)))
         return "number";
-      if (atoms.hasOwnProperty(word)) return "atom";
-      if (builtin.hasOwnProperty(word)) return "builtin";
-      if (keywords.hasOwnProperty(word)) return "keyword";
-      if (client.hasOwnProperty(word)) return "string-2";
+      if (Object.prototype.hasOwnProperty.call(atoms, word)) return "atom";
+      if (Object.prototype.hasOwnProperty.call(builtin, word)) return "builtin";
+      if (Object.prototype.hasOwnProperty.call(keywords, word)) return "keyword";
+      if (Object.prototype.hasOwnProperty.call(client, word)) return "string-2";
       return null;
     }
   }

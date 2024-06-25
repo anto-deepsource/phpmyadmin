@@ -126,7 +126,7 @@ OpenLayers.Format.JSON = OpenLayers.Class(OpenLayers.Format, {
                     function walk(k, v) {
                         if(v && typeof v === 'object') {
                             for(var i in v) {
-                                if(v.hasOwnProperty(i)) {
+                                if(Object.prototype.hasOwnProperty.call(v, i)) {
                                     v[i] = walk(i, v[i]);
                                 }
                             }
@@ -248,7 +248,7 @@ OpenLayers.Format.JSON = OpenLayers.Class(OpenLayers.Format, {
             
             var addComma = false;
             for(key in object) {
-                if(object.hasOwnProperty(key)) {
+                if(Object.prototype.hasOwnProperty.call(object, key)) {
                     // recursive calls need to allow for sub-classing
                     keyJSON = OpenLayers.Format.JSON.prototype.write.apply(this,
                                                     [key, this.pretty]);

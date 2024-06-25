@@ -679,7 +679,7 @@ OpenLayers.Events = OpenLayers.Class({
      */
     on: function(object) {
         for(var type in object) {
-            if(type != "scope" && object.hasOwnProperty(type)) {
+            if(type != "scope" && Object.prototype.hasOwnProperty.call(object, type)) {
                 this.register(type, object.scope, object[type]);
             }
         }
@@ -791,7 +791,7 @@ OpenLayers.Events = OpenLayers.Class({
      */
     un: function(object) {
         for(var type in object) {
-            if(type != "scope" && object.hasOwnProperty(type)) {
+            if(type != "scope" && Object.prototype.hasOwnProperty.call(object, type)) {
                 this.unregister(type, object.scope, object[type]);
             }
         }

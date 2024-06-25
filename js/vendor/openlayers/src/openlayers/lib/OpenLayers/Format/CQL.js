@@ -108,13 +108,13 @@ OpenLayers.Format.CQL = (function() {
 
     var i;
     for (i in operators) {
-        if (operators.hasOwnProperty(i)) {
+        if (Object.prototype.hasOwnProperty.call(operators, i)) {
             operatorReverse[operators[i]] = i;
         }
     }
 
     for (i in logicals) {
-        if (logicals.hasOwnProperty(i)) {
+        if (Object.prototype.hasOwnProperty.call(logicals, i)) {
             logicalReverse[logicals[i]] = i;
         }
     }
