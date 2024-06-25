@@ -1971,7 +1971,7 @@
 	};
 
 	var computeEffectiveSetting = function (settings, property) {
-		return settings && settings[property] ? settings[property] : $.timepicker._defaults[property];
+		return settings?.[property] ? settings[property] : $.timepicker._defaults[property];
 	};
 
 	/*
@@ -2038,7 +2038,7 @@
 	* Internal function to set timezone_select to the local timezone
 	*/
 	var selectLocalTimezone = function (tp_inst, date) {
-		if (tp_inst && tp_inst.timezone_select) {
+		if (tp_inst?.timezone_select) {
 			var now = date || new Date();
 			tp_inst.timezone_select.val(-now.getTimezoneOffset());
 		}
@@ -2251,7 +2251,7 @@
 	 */
 	$.timepicker.log = function () {
 		// Older IE (9, maybe 10) throw error on accessing `window.console.log.apply`, so check first.
-		if (window.console && window.console.log && window.console.log.apply) {
+		if (window.console?.log && window.console.log.apply) {
 			window.console.log.apply(window.console, Array.prototype.slice.call(arguments));
 		}
 	};

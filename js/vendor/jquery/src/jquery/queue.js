@@ -131,7 +131,7 @@ jQuery.fn.extend( {
 
 		while ( i-- ) {
 			tmp = dataPriv.get( elements[ i ], type + "queueHooks" );
-			if ( tmp && tmp.empty ) {
+			if ( tmp?.empty ) {
 				count++;
 				tmp.empty.add( resolve );
 			}
