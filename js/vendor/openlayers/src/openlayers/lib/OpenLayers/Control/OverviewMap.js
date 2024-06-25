@@ -174,7 +174,7 @@ OpenLayers.Control.OverviewMap = OpenLayers.Class(OpenLayers.Control, {
             this.handlers.drag.destroy();
         }
 
-        this.ovmap && this.ovmap.viewPortDiv.removeChild(this.extentRectangle);
+        this.ovmap?.viewPortDiv.removeChild(this.extentRectangle);
         this.extentRectangle = null;
 
         if (this.rectEvents) {

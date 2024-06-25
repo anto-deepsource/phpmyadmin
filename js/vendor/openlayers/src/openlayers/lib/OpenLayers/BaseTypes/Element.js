@@ -162,11 +162,10 @@ OpenLayers.Element = {
         element = OpenLayers.Util.getElement(element);
 
         var value = null;
-        if (element && element.style) {
+        if (element?.style) {
             value = element.style[OpenLayers.String.camelize(style)];
             if (!value) {
-                if (document.defaultView && 
-                    document.defaultView.getComputedStyle) {
+                if (document.defaultView?.getComputedStyle) {
                     
                     var css = document.defaultView.getComputedStyle(element, null);
                     value = css ? css.getPropertyValue(style) : null;

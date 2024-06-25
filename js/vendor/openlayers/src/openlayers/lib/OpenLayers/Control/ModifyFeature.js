@@ -331,7 +331,7 @@ OpenLayers.Control.ModifyFeature = OpenLayers.Class(OpenLayers.Control, {
             this.handlers.drag.deactivate();
             this.handlers.keyboard.deactivate();
             var feature = this.feature;
-            if (feature && feature.geometry && feature.layer) {
+            if (feature?.geometry && feature.layer) {
                 this.unselectFeature(feature);
             }
             deactivated = true;
@@ -381,7 +381,7 @@ OpenLayers.Control.ModifyFeature = OpenLayers.Class(OpenLayers.Control, {
         }
         // keep track of geometry modifications
         var modified = feature.modified;
-        if (feature.geometry && !(modified && modified.geometry)) {
+        if (feature.geometry && !(modified?.geometry)) {
             this._originalGeometry = feature.geometry.clone();
         }
     },
