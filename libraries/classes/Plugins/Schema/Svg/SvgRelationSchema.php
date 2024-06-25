@@ -55,7 +55,7 @@ class SvgRelationSchema extends ExportRelationSchema
      *
      * @see PMA_SVG
      */
-    function __construct($db)
+    public function __construct($db)
     {
         parent::__construct($db, new Svg());
 

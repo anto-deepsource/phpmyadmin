@@ -23,27 +23,27 @@ class Encoding
      * @var int
      */
 
-    const ENGINE_NONE = 0;
+    public const ENGINE_NONE = 0;
     /**
      * iconv encoding conversion engine
      *
      * @var int
      */
-    const ENGINE_ICONV = 1;
+    public const ENGINE_ICONV = 1;
 
     /**
      * recode encoding conversion engine
      *
      * @var int
      */
-    const ENGINE_RECODE = 2;
+    public const ENGINE_RECODE = 2;
 
     /**
      * mbstring encoding conversion engine
      *
      * @var int
      */
-    const ENGINE_MB = 3;
+    public const ENGINE_MB = 3;
 
     /**
      * Chosen encoding engine

@@ -27,7 +27,7 @@ require_once 'libraries/dbi/dbi_dummy.inc.php';
 class DbiDummy implements DbiExtension
 {
     private $_queries = array();
-    const OFFSET_GLOBAL = 1000;
+    public const OFFSET_GLOBAL = 1000;
 
     /**
      * connects to the database server
