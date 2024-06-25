@@ -27,7 +27,7 @@ class DataTest extends \PMATestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['PMA_PHP_SELF'] = Core::getenv('PHP_SELF');
         $GLOBALS['cfg']['Server']['host'] = "::1";
@@ -106,7 +106,7 @@ class DataTest extends \PMATestCase
      *
      * @return void
      */
-    function testGetMenuHtml()
+    public function testGetMenuHtml()
     {
         $html = $this->object->getMenuHtml();
 

@@ -295,11 +295,11 @@ class RelationCleanupTest extends TestCase
  */
 class DBI_PMA_Relation_Cleanup extends DatabaseInterface
 {
-    var $index;
-    var $assocIndex;
-    var $totalNum;
-    var $values = array();
-    var $indexs = array();
+    public $index;
+    public $assocIndex;
+    public $totalNum;
+    public $values = array();
+    public $indexs = array();
 
     /**
      * Constructor
@@ -351,7 +351,7 @@ class DBI_PMA_Relation_Cleanup extends DatabaseInterface
      *
      * @return array
      */
-    function fetchRow($result)
+    public function fetchRow($result)
     {
         $curr_table = array();
         if ($this->index < count($this->values)) {
@@ -375,7 +375,7 @@ class DBI_PMA_Relation_Cleanup extends DatabaseInterface
      *
      * @return mixed
      */
-    function query($sql, $link = null, $options = 0, $cache_affected_rows = true)
+    public function query($sql, $link = null, $options = 0, $cache_affected_rows = true)
     {
         if (mb_stripos($sql, "column_info") !== false) {
             unset($this->values[$this->indexs['column_info']]);

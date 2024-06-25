@@ -28,7 +28,7 @@ class PMA_BuildActionTitles_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['cfg'] = array('ActionLinksMode' => 'both');
     }
@@ -38,7 +38,7 @@ class PMA_BuildActionTitles_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testBuildActionTitles()
+    public function testBuildActionTitles()
     {
         $titles = array();
         $titles['Browse']     = PhpMyAdmin\Util::getIcon('b_browse.png', __('Browse'));

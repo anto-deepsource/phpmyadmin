@@ -22,7 +22,7 @@ class SanitizeTest extends TestCase
      *
      * @return void
      */
-    function setUp()
+    public function setUp()
     {
     }
 

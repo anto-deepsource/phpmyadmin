@@ -1348,7 +1348,7 @@ class TableTest extends \PMATestCase
  */
 Class DataBasePMAMock
 {
-    var $databases;
+    public $databases;
 }
 
 /**
@@ -1365,7 +1365,7 @@ Class DataBaseMock
      *
      * @return bool
      */
-    function exists($name)
+    public function exists($name)
     {
         return true;
     }

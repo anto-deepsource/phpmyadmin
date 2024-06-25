@@ -26,7 +26,7 @@ class PMA_CheckParameters_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['PMA_Config'] = new PhpMyAdmin\Config();
         $GLOBALS['cfg'] = array('ServerDefault' => 1);
@@ -38,7 +38,7 @@ class PMA_CheckParameters_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testCheckParameterMissing()
+    public function testCheckParameterMissing()
     {
         $GLOBALS['PMA_PHP_SELF'] = Core::getenv('PHP_SELF');
         $GLOBALS['pmaThemePath'] = $GLOBALS['PMA_Theme']->getPath();
@@ -55,7 +55,7 @@ class PMA_CheckParameters_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testCheckParameter()
+    public function testCheckParameter()
     {
         $GLOBALS['PMA_PHP_SELF'] = Core::getenv('PHP_SELF');
         $GLOBALS['pmaThemePath'] = $GLOBALS['PMA_Theme']->getPath();
