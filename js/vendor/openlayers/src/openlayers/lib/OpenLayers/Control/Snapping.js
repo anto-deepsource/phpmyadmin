@@ -220,7 +220,7 @@ OpenLayers.Control.Snapping = OpenLayers.Class(OpenLayers.Control, {
      */
     setTargets: function(targets) {
         this.targets = [];
-        if(targets && targets.length) {
+        if(targets?.length) {
             var target;
             for(var i=0, len=targets.length; i<len; ++i) {
                 target = targets[i];
@@ -299,7 +299,7 @@ OpenLayers.Control.Snapping = OpenLayers.Class(OpenLayers.Control, {
     activate: function() {
         var activated = OpenLayers.Control.prototype.activate.call(this);
         if(activated) {
-            if(this.layer && this.layer.events) {
+            if(this.layer?.events) {
                 this.layer.events.on({
                     sketchstarted: this.onSketchModified,
                     sketchmodified: this.onSketchModified,
@@ -319,7 +319,7 @@ OpenLayers.Control.Snapping = OpenLayers.Class(OpenLayers.Control, {
     deactivate: function() {
         var deactivated = OpenLayers.Control.prototype.deactivate.call(this);
         if(deactivated) {
-            if(this.layer && this.layer.events) {
+            if(this.layer?.events) {
                 this.layer.events.un({
                     sketchstarted: this.onSketchModified,
                     sketchmodified: this.onSketchModified,

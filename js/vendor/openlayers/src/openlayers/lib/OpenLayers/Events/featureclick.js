@@ -161,7 +161,7 @@ OpenLayers.Events.featureclick = OpenLayers.Class({
         var out = [];
         for (var id in this.cache) {
             feature = this.cache[id];
-            if (feature.layer && feature.layer.map) {
+            if (feature.layer?.map) {
                 if (!over[feature.id]) {
                     out.push(feature);
                 }
@@ -231,7 +231,7 @@ OpenLayers.Events.featureclick = OpenLayers.Class({
                 if (layer.renderer instanceof OpenLayers.Renderer.Elements) {
                     if (layer instanceof OpenLayers.Layer.Vector) {
                         target = document.elementFromPoint(x, y);
-                        while (target && target._featureId) {
+                        while (target?._featureId) {
                             feature = layer.getFeatureById(target._featureId);
                             if (feature) {
                                 features.push(feature);

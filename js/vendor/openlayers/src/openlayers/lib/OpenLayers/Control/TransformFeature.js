@@ -369,18 +369,18 @@ OpenLayers.Control.TransformFeature = OpenLayers.Class(OpenLayers.Control, {
         // rotated.
         var vertexMoveFn = function(x, y) {
             OpenLayers.Geometry.Point.prototype.move.apply(this, arguments);
-            this._rotationHandle && this._rotationHandle.geometry.move(x, y);
+            this._rotationHandle?.geometry.move(x, y);
             this._handle.geometry.move(x, y);
         };
         var vertexResizeFn = function(scale, center, ratio) {
             OpenLayers.Geometry.Point.prototype.resize.apply(this, arguments);
-            this._rotationHandle && this._rotationHandle.geometry.resize(
+            this._rotationHandle?.geometry.resize(
                 scale, center, ratio);
             this._handle.geometry.resize(scale, center, ratio);
         };
         var vertexRotateFn = function(angle, center) {
             OpenLayers.Geometry.Point.prototype.rotate.apply(this, arguments);
-            this._rotationHandle && this._rotationHandle.geometry.rotate(
+            this._rotationHandle?.geometry.rotate(
                 angle, center);
             this._handle.geometry.rotate(angle, center);
         };
@@ -396,7 +396,7 @@ OpenLayers.Control.TransformFeature = OpenLayers.Class(OpenLayers.Control, {
             var evt = control.dragControl.handlers.drag.evt;
             var preserveAspectRatio = !control._setfeature &&
                 control.preserveAspectRatio;
-            var reshape = !preserveAspectRatio && !(evt && evt.shiftKey);
+            var reshape = !preserveAspectRatio && !(evt?.shiftKey);
             var oldGeom = new OpenLayers.Geometry.Point(oldX, oldY);
             var centerGeometry = control.center;
             this.rotate(-control.rotation, centerGeometry);
@@ -448,7 +448,7 @@ OpenLayers.Control.TransformFeature = OpenLayers.Class(OpenLayers.Control, {
                 return;
             }
             var evt = control.dragControl.handlers.drag.evt;
-            var constrain = (evt && evt.shiftKey) ? 45 : 1;
+            var constrain = (evt?.shiftKey) ? 45 : 1;
             var centerGeometry = control.center;
             var dx1 = this.x - centerGeometry.x;
             var dy1 = this.y - centerGeometry.y;
@@ -604,7 +604,7 @@ OpenLayers.Control.TransformFeature = OpenLayers.Class(OpenLayers.Control, {
             geom = this.box.geometry.components[i];
             geom._handle.destroy();
             geom._handle = null;
-            geom._rotationHandle && geom._rotationHandle.destroy();
+            geom._rotationHandle?.destroy();
             geom._rotationHandle = null;
         }
         this.center = null;
