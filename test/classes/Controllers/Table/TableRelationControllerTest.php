@@ -243,7 +243,7 @@ class TableRelationControllerTest extends \PMATestCase
  */
 Class DataBasePMAMockForTblRelation
 {
-    var $databases;
+    public $databases;
 }
 
 /**
@@ -260,7 +260,7 @@ Class DataBaseMockForTblRelation
      *
      * @return bool
      */
-    function exists($name)
+    public function exists($name)
     {
         return true;
     }

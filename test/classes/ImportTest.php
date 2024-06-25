@@ -41,7 +41,7 @@ class ImportTest extends TestCase
      *
      * @return void
      */
-    function testCheckTimeout()
+    public function testCheckTimeout()
     {
         global $timestamp, $maximum_time, $timeout_passed;
 
@@ -86,7 +86,7 @@ class ImportTest extends TestCase
      *
      * @return void
      */
-    function testLookForUse()
+    public function testLookForUse()
     {
         $this->assertEquals(
             array(null, null),
@@ -134,7 +134,7 @@ class ImportTest extends TestCase
      *
      * @dataProvider provGetColumnAlphaName
      */
-    function testGetColumnAlphaName($expected, $num)
+    public function testGetColumnAlphaName($expected, $num)
     {
         $this->assertEquals($expected, Import::getColumnAlphaName($num));
     }
@@ -144,7 +144,7 @@ class ImportTest extends TestCase
      *
      * @return array
      */
-    function provGetColumnAlphaName()
+    public function provGetColumnAlphaName()
     {
         return array(
             array('A', 1),
@@ -166,7 +166,7 @@ class ImportTest extends TestCase
      *
      * @dataProvider provGetColumnNumberFromName
      */
-    function testGetColumnNumberFromName($expected, $name)
+    public function testGetColumnNumberFromName($expected, $name)
     {
         $this->assertEquals($expected, Import::getColumnNumberFromName($name));
     }
@@ -176,7 +176,7 @@ class ImportTest extends TestCase
      *
      * @return array
      */
-    function provGetColumnNumberFromName()
+    public function provGetColumnNumberFromName()
     {
         return array(
             array(1, 'A'),
@@ -198,7 +198,7 @@ class ImportTest extends TestCase
      *
      * @dataProvider provGetDecimalPrecision
      */
-    function testGetDecimalPrecision($expected, $size)
+    public function testGetDecimalPrecision($expected, $size)
     {
         $this->assertEquals($expected, Import::getDecimalPrecision($size));
     }
@@ -208,7 +208,7 @@ class ImportTest extends TestCase
      *
      * @return array
      */
-    function provGetDecimalPrecision()
+    public function provGetDecimalPrecision()
     {
         return array(
             array(2, '2,1'),
@@ -228,7 +228,7 @@ class ImportTest extends TestCase
      *
      * @dataProvider provGetDecimalScale
      */
-    function testGetDecimalScale($expected, $size)
+    public function testGetDecimalScale($expected, $size)
     {
         $this->assertEquals($expected, Import::getDecimalScale($size));
     }
@@ -238,7 +238,7 @@ class ImportTest extends TestCase
      *
      * @return array
      */
-    function provGetDecimalScale()
+    public function provGetDecimalScale()
     {
         return array(
             array(1, '2,1'),
@@ -258,7 +258,7 @@ class ImportTest extends TestCase
      *
      * @dataProvider provGetDecimalSize
      */
-    function testGetDecimalSize($expected, $cell)
+    public function testGetDecimalSize($expected, $cell)
     {
         $this->assertEquals($expected, Import::getDecimalSize($cell));
     }
@@ -268,7 +268,7 @@ class ImportTest extends TestCase
      *
      * @return array
      */
-    function provGetDecimalSize()
+    public function provGetDecimalSize()
     {
         return array(
             array(array(2, 1, '2,1'), '2.1'),
@@ -291,7 +291,7 @@ class ImportTest extends TestCase
      *
      * @dataProvider provDetectType
      */
-    function testDetectType($expected, $type, $cell)
+    public function testDetectType($expected, $type, $cell)
     {
         $this->assertEquals($expected, Import::detectType($type, $cell));
     }
@@ -301,7 +301,7 @@ class ImportTest extends TestCase
      *
      * @return array
      */
-    function provDetectType()
+    public function provDetectType()
     {
         return array(
             array(Import::NONE, null, 'NULL'),
@@ -325,7 +325,7 @@ class ImportTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetMatchedRows()
+    public function testPMAGetMatchedRows()
     {
         $GLOBALS['db'] = 'PMA';
         //mock DBI
@@ -376,7 +376,7 @@ class ImportTest extends TestCase
      *
      * @return void
      */
-    function simulatedQueryTest($sql_query, $simulated_query)
+    public function simulatedQueryTest($sql_query, $simulated_query)
     {
         $parser = new Parser($sql_query);
         $analyzed_sql_results = array(
@@ -411,7 +411,7 @@ class ImportTest extends TestCase
      *
      * @return void
      */
-    function testPMACheckIfRollbackPossible()
+    public function testPMACheckIfRollbackPossible()
     {
         $GLOBALS['db'] = 'PMA';
         //mock DBI

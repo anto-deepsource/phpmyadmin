@@ -25,7 +25,7 @@ class DatabaseInterfaceTest extends \PMATestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $extension = new DbiDummy();
         $this->_dbi = new DatabaseInterface($extension);

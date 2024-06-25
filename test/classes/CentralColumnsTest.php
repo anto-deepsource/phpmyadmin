@@ -174,7 +174,7 @@ class CentralColumnsTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetCentralColumnsCount()
+    public function testPMAGetCentralColumnsCount()
     {
         $GLOBALS['dbi']->expects($this->once())
             ->method('fetchResult')

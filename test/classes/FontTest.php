@@ -20,7 +20,7 @@ class FontTest extends \PMATestCase
      *
      * @return void
      */
-    function testGetStringWidth()
+    public function testGetStringWidth()
     {
         // empty string
         $this->assertEquals(
@@ -142,7 +142,7 @@ class FontTest extends \PMATestCase
      *
      * @return void
      */
-    function testGetStringWidthFont()
+    public function testGetStringWidthFont()
     {
         // string "phpMyAdmin", with Arial 10
         $this->assertEquals(
@@ -175,7 +175,7 @@ class FontTest extends \PMATestCase
      *
      * @return void
      */
-    function testGetStringWidthSize()
+    public function testGetStringWidthSize()
     {
         // string "phpMyAdmin", with font size 0
         $this->assertEquals(
@@ -207,7 +207,7 @@ class FontTest extends \PMATestCase
      *
      * @return void
      */
-    function testGetStringWidthCharLists()
+    public function testGetStringWidthCharLists()
     {
         // string "a", with invalid charlist (= string)
         $this->assertEquals(
