@@ -294,7 +294,7 @@ OpenLayers.Handler.Polygon = OpenLayers.Class(OpenLayers.Handler.Path, {
      * {<OpenLayers.Geometry.Polygon>}
      */
     getGeometry: function() {
-        var geometry = this.polygon && this.polygon.geometry;
+        var geometry = this.polygon?.geometry;
         if(geometry && this.multi) {
             geometry = new OpenLayers.Geometry.MultiPolygon([geometry]);
         }

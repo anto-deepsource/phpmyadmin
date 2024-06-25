@@ -270,7 +270,7 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
             logo: logo,
             copyrights: copyrights
         });
-        this.map && this.map.events.triggerEvent("changelayer", {
+        this.map?.events.triggerEvent("changelayer", {
             layer: this,
             property: "attribution"
         });
@@ -307,8 +307,7 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      * Method: destroy
      */
     destroy: function() {
-        this.map &&
-            this.map.events.unregister("moveend", this, this.updateAttribution);
+        this.map?.events.unregister("moveend", this, this.updateAttribution);
         OpenLayers.Layer.XYZ.prototype.destroy.apply(this, arguments);
     },
     

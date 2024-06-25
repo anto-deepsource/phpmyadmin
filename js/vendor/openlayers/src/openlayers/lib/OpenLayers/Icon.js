@@ -233,7 +233,7 @@ OpenLayers.Icon = OpenLayers.Class({
     isDrawn: function() {
         // nodeType 11 for ie, whose nodes *always* have a parentNode
         // (of type document fragment)
-        var isDrawn = (this.imageDiv && this.imageDiv.parentNode && 
+        var isDrawn = (this.imageDiv?.parentNode && 
                        (this.imageDiv.parentNode.nodeType != 11));    
 
         return isDrawn;   

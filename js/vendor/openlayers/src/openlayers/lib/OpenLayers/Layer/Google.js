@@ -263,15 +263,15 @@ OpenLayers.Layer.Google = OpenLayers.Class(
         if (cache) {
             // remove shared elements from dom
             var container = this.mapObject && this.getMapContainer();                
-            if (container && container.parentNode) {
+            if (container?.parentNode) {
                 container.parentNode.removeChild(container);
             }
             var termsOfUse = cache.termsOfUse;
-            if (termsOfUse && termsOfUse.parentNode) {
+            if (termsOfUse?.parentNode) {
                 termsOfUse.parentNode.removeChild(termsOfUse);
             }
             var poweredBy = cache.poweredBy;
-            if (poweredBy && poweredBy.parentNode) {
+            if (poweredBy?.parentNode) {
                 poweredBy.parentNode.removeChild(poweredBy);
             }
             if (this.mapObject && window.google && google.maps &&
