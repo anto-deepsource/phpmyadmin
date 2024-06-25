@@ -59,7 +59,7 @@ class PMA_GetBrowseUploadFileBlock_Test extends PHPUnit_Framework_TestCase
      *
      * @dataProvider dataProvider
      */
-    function testBrowseUploadFile($size, $unit, $res)
+    public function testBrowseUploadFile($size, $unit, $res)
     {
         $this->assertEquals(
             PhpMyAdmin\Util::getBrowseUploadFileBlock($size),

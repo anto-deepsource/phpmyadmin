@@ -2299,7 +2299,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetHtmlForViewUsersError()
+    public function testPMAGetHtmlForViewUsersError()
     {
         $this->assertContains(
             'Not enough privilege to view users.',
@@ -2312,7 +2312,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetHtmlForUserProperties()
+    public function testPMAGetHtmlForUserProperties()
     {
         $actual = Privileges::getHtmlForUserProperties(
             false, 'db', 'user', 'host', 'db', 'table'
@@ -2335,7 +2335,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetHtmlForUserOverview()
+    public function testPMAGetHtmlForUserOverview()
     {
         $actual = Privileges::getHtmlForUserOverview('theme', '');
         $this->assertContains(
@@ -2353,7 +2353,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetHtmlForAllTableSpecificRights()
+    public function testPMAGetHtmlForAllTableSpecificRights()
     {
         // Test case 1
         $actual = Privileges::getHtmlForAllTableSpecificRights('pma', 'host', 'table', 'pmadb');
@@ -2393,7 +2393,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetHtmlForInitials()
+    public function testPMAGetHtmlForInitials()
     {
         // Setup for the test
         $GLOBALS['dbi']->expects($this->any())->method('fetchRow')
@@ -2421,7 +2421,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetDbRightsForUserOverview()
+    public function testPMAGetDbRightsForUserOverview()
     {
         //Mock DBI
         $dbi = $this->getMockBuilder('PhpMyAdmin\DatabaseInterface')
@@ -2467,7 +2467,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMAGetHtmlForAuthPluginsDropdown()
+    public function testPMAGetHtmlForAuthPluginsDropdown()
     {
         $oldDbi = $GLOBALS['dbi'];
 
@@ -2577,7 +2577,7 @@ class PrivilegesTest extends TestCase
      *
      * @return void
      */
-    function testPMADeleteUser()
+    public function testPMADeleteUser()
     {
         //Mock DBI
         $dbi = $this->getMockBuilder('PhpMyAdmin\DatabaseInterface')

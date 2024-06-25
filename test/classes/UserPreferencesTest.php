@@ -22,7 +22,7 @@ class UserPreferencesTest extends \PMATestCase
      *
      * @return void
      */
-    function setUp()
+    public function setUp()
     {
         global $cfg;
         include 'libraries/config.default.php';
