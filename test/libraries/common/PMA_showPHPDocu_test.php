@@ -28,7 +28,7 @@ class PMA_ShowPHPDocu_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['server'] = 99;
         $GLOBALS['cfg']['ServerDefault'] = 0;
@@ -39,7 +39,7 @@ class PMA_ShowPHPDocu_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testShowPHPDocu()
+    public function testShowPHPDocu()
     {
         $target = "docu";
         $lang = _pgettext('PHP documentation language', 'en');

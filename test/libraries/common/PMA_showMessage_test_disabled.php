@@ -23,7 +23,7 @@ class PMA_ShowMessage_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function setUp()
+    public function setUp()
     {
         global $cfg;
         if (! defined('VERSION_CHECK_DEFAULT')) {
@@ -38,7 +38,7 @@ class PMA_ShowMessage_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testShowMessageNotAjax()
+    public function testShowMessageNotAjax()
     {
         global $cfg;
 

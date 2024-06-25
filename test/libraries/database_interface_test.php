@@ -22,7 +22,7 @@ class PMA_DBI_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
         $GLOBALS['cfg']['DBG']['sql'] = false;
         $GLOBALS['cfg']['IconvExtraParams'] = '';
@@ -36,7 +36,7 @@ class PMA_DBI_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testQuery()
+    public function testQuery()
     {
         $this->assertEquals(1000, $GLOBALS['dbi']->tryQuery('SELECT 1'));
     }
@@ -48,7 +48,7 @@ class PMA_DBI_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testFetch()
+    public function testFetch()
     {
         $result = $GLOBALS['dbi']->tryQuery('SELECT 1');
         $this->assertEquals(array('1'), $GLOBALS['dbi']->fetchArray($result));
@@ -64,7 +64,7 @@ class PMA_DBI_Test extends PHPUnit_Framework_TestCase
      *
      * @dataProvider schemaData
      */
-    function testSystemSchema($schema, $expected)
+    public function testSystemSchema($schema, $expected)
     {
         $this->assertEquals($expected, $GLOBALS['dbi']->isSystemSchema($schema));
     }
@@ -74,7 +74,7 @@ class PMA_DBI_Test extends PHPUnit_Framework_TestCase
      *
      * @return array with test data
      */
-    function schemaData()
+    public function schemaData()
     {
         return array(
             array('information_schema', true),
@@ -93,7 +93,7 @@ class PMA_DBI_Test extends PHPUnit_Framework_TestCase
      *
      * @dataProvider errorData
      */
-    function testFormatError($number, $message, $expected)
+    public function testFormatError($number, $message, $expected)
     {
         $GLOBALS['server'] = 1;
         $this->assertEquals(
@@ -107,7 +107,7 @@ class PMA_DBI_Test extends PHPUnit_Framework_TestCase
      *
      * @return array with test data
      */
-    function errorData()
+    public function errorData()
     {
         return array(
             array(1234, '', '#1234 - '),

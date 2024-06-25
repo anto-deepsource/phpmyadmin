@@ -25,7 +25,7 @@ class PMA_FormatSql_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testFormatSQL()
+    public function testFormatSQL()
     {
 
         $this->assertEquals(
@@ -41,7 +41,7 @@ class PMA_FormatSql_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testFormatSQLTruncate()
+    public function testFormatSQLTruncate()
     {
         $GLOBALS['cfg']['MaxCharactersInDisplayedSQL'] = 6;
 

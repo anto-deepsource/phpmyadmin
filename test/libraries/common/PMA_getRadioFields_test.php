@@ -25,7 +25,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFieldsEmpty()
+    public function testGetRadioFieldsEmpty()
     {
         $name = "test_display_radio";
         $choices = array();
@@ -41,7 +41,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFields()
+    public function testGetRadioFields()
     {
         $name = "test_display_radio";
         $choices = array('value_1'=>'choice_1', 'value_2'=>'choice_2');
@@ -70,7 +70,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFieldsWithChecked()
+    public function testGetRadioFieldsWithChecked()
     {
         $name = "test_display_radio";
         $choices = array('value_1'=>'choice_1', 'value_2'=>'choice_2');
@@ -105,7 +105,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFieldsWithCheckedWithClass()
+    public function testGetRadioFieldsWithCheckedWithClass()
     {
         $name = "test_display_radio";
         $choices = array('value_1'=>'choice_1', 'value_2'=>'choice_2');
@@ -145,7 +145,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFieldsWithoutBR()
+    public function testGetRadioFieldsWithoutBR()
     {
         $name = "test_display_radio";
         $choices = array('value_1'=>'choice_1', 'value&_&lt;2&gt;'=>'choice_2');
@@ -178,7 +178,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFieldsEscapeLabelEscapeLabel()
+    public function testGetRadioFieldsEscapeLabelEscapeLabel()
     {
         $name = "test_display_radio";
         $choices = array('value_1'=>'choice_1', 'value_&2'=>'choice&_&lt;2&gt;');
@@ -213,7 +213,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFieldsEscapeLabelNotEscapeLabel()
+    public function testGetRadioFieldsEscapeLabelNotEscapeLabel()
     {
         $name = "test_display_radio";
         $choices = array('value_1'=>'choice_1', 'value_&2'=>'choice&_&lt;2&gt;');
@@ -248,7 +248,7 @@ class PMA_GetRadioFieldsTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetRadioFieldsEscapeLabelEscapeLabelWithClass()
+    public function testGetRadioFieldsEscapeLabelEscapeLabelWithClass()
     {
         $name = "test_display_radio";
         $choices = array('value_1'=>'choice_1', 'value_&2'=>'choice&_&lt;2&gt;');

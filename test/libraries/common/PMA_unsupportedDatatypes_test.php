@@ -25,7 +25,7 @@ class PMA_UnsupportedDatatypes_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testNotSupportedDataTypes()
+    public function testNotSupportedDataTypes()
     {
         $no_support_types = array();
         $this->assertEquals(
