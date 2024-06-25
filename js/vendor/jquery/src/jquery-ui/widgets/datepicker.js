@@ -807,7 +807,7 @@ $.extend( Datepicker.prototype, {
 			inst.dpDiv.css( "z-index", datepicker_getZindex( $( input ) ) + 1 );
 			$.datepicker._datepickerShowing = true;
 
-			if ( $.effects && $.effects.effect[ showAnim ] ) {
+			if ( $.effects?.effect[ showAnim ] ) {
 				inst.dpDiv.show( showAnim, $.datepicker._get( inst, "showOptions" ), duration );
 			} else {
 				inst.dpDiv[ showAnim || "show" ]( showAnim ? duration : null );
@@ -869,7 +869,7 @@ $.extend( Datepicker.prototype, {
 	// this breaks the change event in IE
 	// Support: IE and jQuery <1.9
 	_shouldFocusInput: function( inst ) {
-		return inst.input && inst.input.is( ":visible" ) && !inst.input.is( ":disabled" ) && !inst.input.is( ":focus" );
+		return inst.input?.is( ":visible" ) && !inst.input.is( ":disabled" ) && !inst.input.is( ":focus" );
 	},
 
 	/* Check positioning to remain on screen. */

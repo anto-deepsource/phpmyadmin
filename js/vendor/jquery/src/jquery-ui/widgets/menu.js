@@ -486,7 +486,7 @@ return $.widget( "ui.menu", {
 
 			// If we were passed an event, look for the submenu that contains the event
 			var currentMenu = all ? this.element :
-				$( event && event.target ).closest( this.element.find( ".ui-menu" ) );
+				$( event?.target ).closest( this.element.find( ".ui-menu" ) );
 
 			// If we found no valid submenu ancestor, use the main menu to close all
 			// sub menus anyway
@@ -531,7 +531,7 @@ return $.widget( "ui.menu", {
 	collapse: function( event ) {
 		var newItem = this.active &&
 			this.active.parent().closest( ".ui-menu-item", this.element );
-		if ( newItem && newItem.length ) {
+		if ( newItem?.length ) {
 			this._close();
 			this.focus( event, newItem );
 		}
@@ -544,7 +544,7 @@ return $.widget( "ui.menu", {
 					.find( this.options.items )
 						.first();
 
-		if ( newItem && newItem.length ) {
+		if ( newItem?.length ) {
 			this._open( newItem.parent() );
 
 			// Delay so Firefox will not hide activedescendant change in expanding submenu from AT

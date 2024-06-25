@@ -321,7 +321,7 @@ $.widget( "ui.resizable", $.ui.mouse, {
 				if ( this.className ) {
 					axis = this.className.match( /ui-resizable-(se|sw|ne|nw|n|e|s|w)/i );
 				}
-				that.axis = axis && axis[ 1 ] ? axis[ 1 ] : "se";
+				that.axis = axis?.[1] ? axis[ 1 ] : "se";
 			}
 		} );
 
@@ -823,7 +823,7 @@ $.ui.plugin.add( "resizable", "animate", {
 						left: parseFloat( that.element.css( "left" ) )
 					};
 
-					if ( pr && pr.length ) {
+					if ( pr?.length ) {
 						$( pr[ 0 ] ).css( { width: data.width, height: data.height } );
 					}
 
