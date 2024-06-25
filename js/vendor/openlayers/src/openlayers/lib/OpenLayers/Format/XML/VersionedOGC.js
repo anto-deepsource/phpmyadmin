@@ -115,7 +115,7 @@ OpenLayers.Format.XML.VersionedOGC = OpenLayers.Class(OpenLayers.Format.XML, {
                 }
             }
         } else { // write
-            version = (options && options.version) || 
+            version = (options?.version) || 
                 this.version || this.defaultVersion;
         }
         return version;

@@ -276,7 +276,7 @@ OpenLayers.Geometry.LinearRing = OpenLayers.Class(
             }
         }
         var area = 0.0;
-        var len = ring.components && ring.components.length;
+        var len = ring.components?.length;
         if(len > 2) {
             var p1, p2;
             for(var i=0; i<len-1; i++) {

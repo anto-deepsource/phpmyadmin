@@ -195,7 +195,7 @@ OpenLayers.Format.WMSGetFeatureInfo = OpenLayers.Class(OpenLayers.Format.XML, {
     getSiblingNodesByTagCriteria: function(node, criteria){
         var nodes = [];
         var children, tagName, n, matchNodes, child;
-        if (node && node.hasChildNodes()) {
+        if (node?.hasChildNodes()) {
             children = node.childNodes;
             n = children.length;
 
@@ -284,8 +284,8 @@ OpenLayers.Format.WMSGetFeatureInfo = OpenLayers.Class(OpenLayers.Format.XML, {
         var feature = this.gmlFormat.parseFeature(node);
         var geometry, bounds = null;
         if (feature) {
-            geometry = feature.geometry && feature.geometry.clone();
-            bounds = feature.bounds && feature.bounds.clone();
+            geometry = feature.geometry?.clone();
+            bounds = feature.bounds?.clone();
             feature.destroy();
         }
         return {geometry: geometry, bounds: bounds};

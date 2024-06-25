@@ -197,8 +197,7 @@ OpenLayers.Format.WMTSCapabilities = OpenLayers.Class(OpenLayers.Format.XML.Vers
             var constraint;
             for (var i = 0, ii = httpGet.length; i < ii; i++) {
                 constraint = httpGet[i].constraints;
-                if (!constraint || (constraint && constraint.
-                        GetEncoding.allowedValues[requestEncoding])) {
+                if (!constraint || (constraint?.GetEncoding.allowedValues[requestEncoding])) {
                     url.push(httpGet[i].url);
                 }
             }
