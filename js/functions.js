@@ -300,7 +300,7 @@ function PMA_getSQLEditor ($textarea, options, resize, lintOptions) {
  * Clear text selection
  */
 function PMA_clearSelection () {
-    if (document.selection && document.selection.empty) {
+    if (document.selection?.empty) {
         document.selection.empty();
     } else if (window.getSelection) {
         var sel = window.getSelection();
@@ -457,9 +457,9 @@ function suggestPassword (passwd_form) {
     passwd.value = '';
 
     // First we're going to try to use a built-in CSPRNG
-    if (window.crypto && window.crypto.getRandomValues) {
+    if (window.crypto?.getRandomValues) {
         window.crypto.getRandomValues(randomWords);
-    } else if (window.msCrypto && window.msCrypto.getRandomValues) {
+    } else if (window.msCrypto?.getRandomValues) {
         // Because of course IE calls it msCrypto instead of being standard
         window.msCrypto.getRandomValues(randomWords);
     } else {
@@ -519,7 +519,7 @@ function parseVersionString (str) {
  * Indicates current available version on main page.
  */
 function PMA_current_version (data) {
-    if (data && data.version && data.date) {
+    if (data?.version && data.date) {
         var current = parseVersionString($('span.version').text());
         var latest = parseVersionString(data.version);
         var url = 'https://www.phpmyadmin.net/files/' + escapeHtml(encodeURIComponent(data.version)) + '/';
@@ -2933,7 +2933,7 @@ AJAX.registerOnload('functions.js', function () {
                         PMA_reloadNavigation();
                         // Redirect to table structure page on creation of new table
                         var params_12 = 'ajax_request=true&ajax_page_request=true';
-                        if (! (history && history.pushState)) {
+                        if (! (history?.pushState)) {
                             params_12 += PMA_MicroHistory.menus.getRequestParam();
                         }
                         tblStruct_url = 'tbl_structure.php?server=' + data._params.server +
@@ -4474,7 +4474,7 @@ AJAX.registerOnload('functions.js', function () {
      */
     $('a.take_theme').click(function (e) {
         var what = this.name;
-        if (window.opener && window.opener.document.forms.setTheme.elements.set_theme) {
+        if (window.opener?.document.forms.setTheme.elements.set_theme) {
             window.opener.document.forms.setTheme.elements.set_theme.value = what;
             window.opener.document.forms.setTheme.submit();
             window.close();

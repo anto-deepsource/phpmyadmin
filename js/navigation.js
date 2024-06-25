@@ -1567,7 +1567,7 @@ PMA_fastFilter.filter.prototype.request = function () {
             if (status !== 'abort') {
                 var data = JSON.parse(jqXHR.responseText);
                 self.$this.find('li.fast_filter').find('div.throbber').remove();
-                if (data && data.results) {
+                if (data?.results) {
                     self.swap.apply(self, [data.message]);
                 }
             }

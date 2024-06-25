@@ -164,7 +164,7 @@
     }
 
     var columns = getTable(table);
-    if (columns && columns.columns)
+    if (columns?.columns)
       columns = columns.columns;
 
     if (columns) {
@@ -239,9 +239,9 @@
   }
 
   CodeMirror.registerHelper("hint", "sql", function(editor, options) {
-    tables = parseTables(options && options.tables)
-    var defaultTableName = options && options.defaultTable;
-    var disableKeywords = options && options.disableKeywords;
+    tables = parseTables(options?.tables)
+    var defaultTableName = options?.defaultTable;
+    var disableKeywords = options?.disableKeywords;
     defaultTable = defaultTableName && getTable(defaultTableName);
     keywords = getKeywords(editor);
     identifierQuote = getIdentifierQuote(editor);

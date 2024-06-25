@@ -9,7 +9,7 @@ AJAX.registerOnload('transformations/image_upload.js', function () {
     // Change thumbnail when image file is selected
     // through file upload dialog
     $('input.image-upload').on('change', function (event) {
-        if (this.files && this.files[0]) {
+        if (this.files?.[0]) {
             var reader = new FileReader();
             var $input = $(this);
             reader.onload = function (e) {

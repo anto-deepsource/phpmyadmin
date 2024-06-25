@@ -505,7 +505,7 @@ AJAX.registerOnload('sql.js', function () {
                 PMA_highlightSQL($sqlqueryresultsouter);
 
                 if (data._menu) {
-                    if (history && history.pushState) {
+                    if (history?.pushState) {
                         history.replaceState({
                             menu : data._menu
                         },
@@ -517,7 +517,7 @@ AJAX.registerOnload('sql.js', function () {
                         PMA_MicroHistory.menus.add(data._menuHash, data._menu);
                     }
                 } else if (data._menuHash) {
-                    if (! (history && history.pushState)) {
+                    if (! (history?.pushState)) {
                         PMA_MicroHistory.menus.replace(PMA_MicroHistory.menus.get(data._menuHash));
                     }
                 }
