@@ -102,7 +102,7 @@ OpenLayers.Lang = {
      */
     translate: function(key, context) {
         var dictionary = OpenLayers.Lang[OpenLayers.Lang.getCode()];
-        var message = dictionary && dictionary[key];
+        var message = dictionary?.[key];
         if(!message) {
             // Message not found, fall back to message key
             message = key;
