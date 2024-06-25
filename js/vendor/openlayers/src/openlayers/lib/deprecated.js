@@ -2481,7 +2481,7 @@ OpenLayers.Layer.WFS = OpenLayers.Class(
                                                                 newArguments);
         }
 
-        if (this.params && this.params.typename && !this.options.typename) {
+        if (this.params?.typename && !this.options.typename) {
             this.options.typename = this.params.typename;
         }
 
@@ -2515,7 +2515,7 @@ OpenLayers.Layer.WFS = OpenLayers.Class(
         this.featureClass = null;
         this.format = null;
 
-        if (this.formatObject && this.formatObject.destroy) {
+        if (this.formatObject?.destroy) {
             this.formatObject.destroy();
         }
         this.formatObject = null;
@@ -3659,7 +3659,7 @@ OpenLayers.Protocol.SQL.Gears = OpenLayers.Class(OpenLayers.Protocol.SQL, {
             features: features
         });
 
-        if (options && options.callback) {
+        if (options?.callback) {
             options.callback.call(options.scope, resp);
         }
 
@@ -3734,7 +3734,7 @@ OpenLayers.Protocol.SQL.Gears = OpenLayers.Class(OpenLayers.Protocol.SQL, {
         var resp = this.createOrUpdate(features);
         resp.requestType = "create";
 
-        if (options && options.callback) {
+        if (options?.callback) {
             options.callback.call(options.scope, resp);
         }
 
@@ -3761,7 +3761,7 @@ OpenLayers.Protocol.SQL.Gears = OpenLayers.Class(OpenLayers.Protocol.SQL, {
         var resp = this.createOrUpdate(features);
         resp.requestType = "update";
 
-        if (options && options.callback) {
+        if (options?.callback) {
             options.callback.call(options.scope, resp);
         }
 
@@ -3913,7 +3913,7 @@ OpenLayers.Protocol.SQL.Gears = OpenLayers.Class(OpenLayers.Protocol.SQL, {
             reqFeatures: features
         });
 
-        if (options && options.callback) {
+        if (options?.callback) {
             options.callback.call(options.scope, resp);
         }
 
@@ -4030,7 +4030,7 @@ OpenLayers.Protocol.SQL.Gears = OpenLayers.Class(OpenLayers.Protocol.SQL, {
      */
     callUserCallback: function(options, resp) {
         var opt = options[resp.requestType];
-        if (opt && opt.callback) {
+        if (opt?.callback) {
             opt.callback.call(opt.scope, resp);
         }
         if (resp.last && options.callback) {

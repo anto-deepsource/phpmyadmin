@@ -196,7 +196,7 @@ jQuery.extend( {
 	},
 	contains: function( a, b ) {
 		var adown = a.nodeType === 9 ? a.documentElement : a,
-			bup = b && b.parentNode;
+			bup = b?.parentNode;
 		return a === bup || !!( bup && bup.nodeType === 1 && adown.contains( bup ) );
 	},
 	isXMLDoc: function( elem ) {

@@ -83,7 +83,7 @@ OpenLayers.Control.Attribution =
      */
     updateAttribution: function() {
         var attributions = [];
-        if (this.map && this.map.layers) {
+        if (this.map?.layers) {
             for(var i=0, len=this.map.layers.length; i<len; i++) {
                 var layer = this.map.layers[i];
                 if (layer.attribution && layer.getVisibility()) {
