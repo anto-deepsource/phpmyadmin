@@ -847,7 +847,7 @@ OpenLayers.Format.XML = OpenLayers.Class(OpenLayers.Format, {
      */
     getXMLDoc: function() {
         if (!OpenLayers.Format.XML.document && !this.xmldom) {
-            if (document.implementation && document.implementation.createDocument) {
+            if (document.implementation?.createDocument) {
                 OpenLayers.Format.XML.document =
                     document.implementation.createDocument("", "", null);
             } else if (!this.xmldom && window.ActiveXObject) {

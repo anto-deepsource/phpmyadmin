@@ -252,7 +252,7 @@ OpenLayers.Geometry = OpenLayers.Class({
      */
     toString: function() {
         var string;
-        if (OpenLayers.Format && OpenLayers.Format.WKT) {
+        if (OpenLayers.Format?.WKT) {
             string = OpenLayers.Format.WKT.prototype.write(
                 new OpenLayers.Feature.Vector(this)
             );
@@ -279,7 +279,7 @@ OpenLayers.Geometry = OpenLayers.Class({
  */
 OpenLayers.Geometry.fromWKT = function(wkt) {
     var geom;
-    if (OpenLayers.Format && OpenLayers.Format.WKT) {
+    if (OpenLayers.Format?.WKT) {
         var format = OpenLayers.Geometry.fromWKT.format;
         if (!format) {
             format = new OpenLayers.Format.WKT();
@@ -341,8 +341,8 @@ OpenLayers.Geometry.fromWKT = function(wkt) {
  *     to the shorter segment).
  */
 OpenLayers.Geometry.segmentsIntersect = function(seg1, seg2, options) {
-    var point = options && options.point;
-    var tolerance = options && options.tolerance;
+    var point = options?.point;
+    var tolerance = options?.tolerance;
     var intersection = false;
     var x11_21 = seg1.x1 - seg2.x1;
     var y11_21 = seg1.y1 - seg2.y1;
