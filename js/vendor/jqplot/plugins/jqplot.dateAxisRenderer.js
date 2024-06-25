@@ -369,7 +369,7 @@
 
         var cursor = plot.plugins.cursor;
 
-        if (cursor && cursor._zoom && cursor._zoom.zooming) {
+        if (cursor?._zoom && cursor._zoom.zooming) {
             this.min = null;
             this.max = null;
         }

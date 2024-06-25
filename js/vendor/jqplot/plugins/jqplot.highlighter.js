@@ -182,12 +182,12 @@
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     $.jqplot.Highlighter.postPlotDraw = function() {
         // Memory Leaks patch    
-        if (this.plugins.highlighter && this.plugins.highlighter.highlightCanvas) {
+        if (this.plugins.highlighter?.highlightCanvas) {
             this.plugins.highlighter.highlightCanvas.resetCanvas();
             this.plugins.highlighter.highlightCanvas = null;
         }
 
-        if (this.plugins.highlighter && this.plugins.highlighter._tooltipElem) {
+        if (this.plugins.highlighter?._tooltipElem) {
             this.plugins.highlighter._tooltipElem.emptyForce();
             this.plugins.highlighter._tooltipElem = null;
         }
