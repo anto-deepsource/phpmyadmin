@@ -80,7 +80,7 @@ $('table').sortableTable('destroy')   - removes all events from the table
 				oldCell = this;
 				//move(e.pageX,e.pageY);
 				
-				if(options.events && options.events.start)
+				if(options.events?.start)
 					options.events.start(this);
 
 				return false;
@@ -198,7 +198,7 @@ $('table').sortableTable('destroy')   - removes all events from the table
 				moveTo($(dropTo).children().first(), { duration: 100 });
 				moveTo($(drag).children().first(), { duration: 100 });
 					
-				if(options.events && options.events.drop) {
+				if(options.events?.drop) {
 					// Drop event. The drag child element is moved into the drop element
 					// and vice versa. So the parameters are switched.
 					

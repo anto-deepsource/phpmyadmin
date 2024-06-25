@@ -14,7 +14,7 @@ jQuery.migrateVersion = "3.0.0";
 	// Support: IE9 only
 	// IE9 only creates console object when dev tools are first opened
 	// Also, avoid Function#bind here to simplify PhantomJS usage
-	var log = window.console && window.console.log &&
+	var log = window.console?.log &&
 			function() { window.console.log.apply( window.console, arguments ); },
 		rbadVersions = /^[12]\./;
 
@@ -58,7 +58,7 @@ function migrateWarn( msg ) {
 	if ( !warnedAbout[ msg ] ) {
 		warnedAbout[ msg ] = true;
 		jQuery.migrateWarnings.push( msg );
-		if ( console && console.warn && !jQuery.migrateMute ) {
+		if ( console?.warn && !jQuery.migrateMute ) {
 			console.warn( "JQMIGRATE: " + msg );
 			if ( jQuery.migrateTrace && console.trace ) {
 				console.trace();
@@ -161,7 +161,7 @@ jQuery.isNumeric = function( val ) {
 
 	// The jQuery 2.2.3 implementation of isNumeric
 	function isNumeric2( obj ) {
-		var realStringObj = obj && obj.toString();
+		var realStringObj = obj?.toString();
 		return !jQuery.isArray( obj ) && ( realStringObj - parseFloat( realStringObj ) + 1 ) >= 0;
 	}
 
@@ -258,7 +258,7 @@ var internalSwapCall = false;
 // If this version of jQuery has .swap(), don't false-alarm on internal uses
 if ( jQuery.swap ) {
 	jQuery.each( [ "height", "width", "reliableMarginRight" ], function( _, name ) {
-		var oldHook = jQuery.cssHooks[ name ] && jQuery.cssHooks[ name ].get;
+		var oldHook = jQuery.cssHooks[ name ]?.get;
 
 		if ( oldHook ) {
 			jQuery.cssHooks[ name ].get = function() {
@@ -367,7 +367,7 @@ jQuery.event.fix = function( originalEvent ) {
 
 	event = originalFix.call( this, originalEvent );
 
-	return fixHook && fixHook.filter ? fixHook.filter( event, originalEvent ) : event;
+	return fixHook?.filter ? fixHook.filter( event, originalEvent ) : event;
 };
 
 jQuery.each( [ "load", "unload", "error" ], function( _, name ) {
@@ -461,7 +461,7 @@ jQuery.fn.offset = function() {
 var oldParam = jQuery.param;
 
 jQuery.param = function( data, traditional ) {
-	var ajaxTraditional = jQuery.ajaxSettings && jQuery.ajaxSettings.traditional;
+	var ajaxTraditional = jQuery.ajaxSettings?.traditional;
 
 	if ( traditional === undefined && ajaxTraditional ) {
 
@@ -509,7 +509,7 @@ jQuery.Deferred = function( func ) {
 				// deferred.fail(function() { bind to newDefer or newDefer.reject })
 				// deferred.progress(function() { bind to newDefer or newDefer.notify })
 				deferred[ tuple[ 1 ] ]( function() {
-					var returned = fn && fn.apply( this, arguments );
+					var returned = fn?.apply( this, arguments );
 					if ( returned && jQuery.isFunction( returned.promise ) ) {
 						returned.promise()
 							.done( newDefer.resolve )
