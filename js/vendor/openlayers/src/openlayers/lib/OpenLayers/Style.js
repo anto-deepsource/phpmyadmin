@@ -118,7 +118,7 @@ OpenLayers.Style = OpenLayers.Class({
 
         OpenLayers.Util.extend(this, options);
         this.rules = [];
-        if(options && options.rules) {
+        if(options?.rules) {
             this.addRules(options.rules);
         }
 

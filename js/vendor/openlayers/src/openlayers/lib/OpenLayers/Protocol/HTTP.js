@@ -571,7 +571,7 @@ OpenLayers.Protocol.HTTP = OpenLayers.Class(OpenLayers.Protocol, {
      */
     callUserCallback: function(resp, options) {
         var opt = options[resp.requestType];
-        if(opt && opt.callback) {
+        if(opt?.callback) {
             opt.callback.call(opt.scope, resp);
         }
     },

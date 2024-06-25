@@ -247,7 +247,7 @@
         // BUGFIX: Safari - fails sending documents created/modified dynamically, so an explicit serialization required
         // BUGFIX: IE - rewrites any custom mime-type to "text/xml" in case an XMLNode is sent
         // BUGFIX: Gecko - fails sending Element (this is up to the implementation either to standard)
-        if (vData && vData.nodeType) {
+        if (vData?.nodeType) {
             vData    = window.XMLSerializer ? new window.XMLSerializer().serializeToString(vData) : vData.xml;
             if (!this._headers["Content-Type"])
                 this._object.setRequestHeader("Content-Type", "application/xml");

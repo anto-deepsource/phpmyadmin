@@ -113,7 +113,7 @@ OpenLayers.Tween = OpenLayers.Class({
         this.startTime = new Date().getTime();
         OpenLayers.Animation.stop(this.animationId);
         this.animationId = null;
-        if (this.callbacks && this.callbacks.start) {
+        if (this.callbacks?.start) {
             this.callbacks.start.call(this, this.begin);
         }
         this.animationId = OpenLayers.Animation.start(
@@ -131,7 +131,7 @@ OpenLayers.Tween = OpenLayers.Class({
             return;
         }
         
-        if (this.callbacks && this.callbacks.done) {
+        if (this.callbacks?.done) {
             this.callbacks.done.call(this, this.finish);
         }
         OpenLayers.Animation.stop(this.animationId);
@@ -157,7 +157,7 @@ OpenLayers.Tween = OpenLayers.Class({
         }
         this.time++;
         
-        if (this.callbacks && this.callbacks.eachStep) {
+        if (this.callbacks?.eachStep) {
             // skip frames if frame rate drops below threshold
             if ((new Date().getTime() - this.startTime) / this.time <= 1000 / this.minFrameRate) {
                 this.callbacks.eachStep.call(this, value);

@@ -226,7 +226,7 @@ OpenLayers.Rule = OpenLayers.Class({
             }
         }
         // clone filter
-        options.filter = this.filter && this.filter.clone();
+        options.filter = this.filter?.clone();
         // clone context
         options.context = this.context && OpenLayers.Util.extend({}, this.context);
         return new OpenLayers.Rule(options);

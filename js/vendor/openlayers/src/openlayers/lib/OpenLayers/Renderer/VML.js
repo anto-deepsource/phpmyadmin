@@ -898,9 +898,9 @@ OpenLayers.Renderer.VML = OpenLayers.Class(OpenLayers.Renderer.Elements, {
         if(layer instanceof OpenLayers.Layer.Vector.RootContainer) {
             layer = this.map.getLayer(this.container.id);
         }
-        layer && layer.renderer.clear();
+        layer?.renderer.clear();
         OpenLayers.Renderer.Elements.prototype.moveRoot.apply(this, arguments);
-        layer && layer.redraw();
+        layer?.redraw();
     },
     
     /**

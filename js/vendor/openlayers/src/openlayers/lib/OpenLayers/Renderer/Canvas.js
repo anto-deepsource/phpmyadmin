@@ -167,11 +167,11 @@ OpenLayers.Renderer.Canvas = OpenLayers.Class(OpenLayers.Renderer, {
             var bounds = feature.geometry.getBounds();
 
             var worldBounds;
-            if (this.map.baseLayer && this.map.baseLayer.wrapDateLine) {
+            if (this.map.baseLayer?.wrapDateLine) {
                 worldBounds = this.map.getMaxExtent();
             }
 
-            var intersects = bounds && bounds.intersectsBounds(this.extent, {worldBounds: worldBounds});
+            var intersects = bounds?.intersectsBounds(this.extent, {worldBounds: worldBounds});
 
             rendered = (style.display !== "none") && !!bounds && intersects;
             if (rendered) {
@@ -852,7 +852,7 @@ OpenLayers.Renderer.Canvas = OpenLayers.Class(OpenLayers.Renderer, {
             }
             var labelMap = [];
             var feature, geometry, style;
-            var worldBounds = (this.map.baseLayer && this.map.baseLayer.wrapDateLine) && this.map.getMaxExtent();
+            var worldBounds = (this.map.baseLayer?.wrapDateLine) && this.map.getMaxExtent();
             for (var id in this.features) {
                 if (!Object.prototype.hasOwnProperty.call(this.features, id)) { continue; }
                 feature = this.features[id][0];

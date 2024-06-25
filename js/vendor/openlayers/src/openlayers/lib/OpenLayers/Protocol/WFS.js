@@ -69,7 +69,7 @@ OpenLayers.Protocol.WFS.fromWMSLayer = function(layer, options) {
         url: layer.url,
         featureType: typeName,
         featurePrefix: featurePrefix,
-        srsName: layer.projection && layer.projection.getCode() ||
+        srsName: layer.projection?.getCode() ||
                  layer.map && layer.map.getProjectionObject().getCode(),
         version: "1.1.0"
     };
