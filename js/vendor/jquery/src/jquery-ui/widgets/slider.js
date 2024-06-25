@@ -99,7 +99,7 @@ return $.widget( "ui.slider", $.ui.mouse, {
 			handle = "<span tabindex='0'></span>",
 			handles = [];
 
-		handleCount = ( options.values && options.values.length ) || 1;
+		handleCount = ( options.values?.length ) || 1;
 
 		if ( existingHandles.length > handleCount ) {
 			existingHandles.slice( handleCount ).remove();
@@ -317,7 +317,7 @@ return $.widget( "ui.slider", $.ui.mouse, {
 	},
 
 	_hasMultipleValues: function() {
-		return this.options.values && this.options.values.length;
+		return this.options.values?.length;
 	},
 
 	_start: function( event, index ) {

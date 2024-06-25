@@ -1116,8 +1116,7 @@ $.ui.plugin.add( "draggable", "snap", {
 					!$.contains( inst.snapElements[ i ].item.ownerDocument,
 					inst.snapElements[ i ].item ) ) {
 				if ( inst.snapElements[ i ].snapping ) {
-					( inst.options.snap.release &&
-						inst.options.snap.release.call(
+					( inst.options.snap.release?.call(
 							inst.element,
 							event,
 							$.extend( inst._uiHash(), { snapItem: inst.snapElements[ i ].item } )
@@ -1192,8 +1191,7 @@ $.ui.plugin.add( "draggable", "snap", {
 			}
 
 			if ( !inst.snapElements[ i ].snapping && ( ts || bs || ls || rs || first ) ) {
-				( inst.options.snap.snap &&
-					inst.options.snap.snap.call(
+				( inst.options.snap.snap?.call(
 						inst.element,
 						event,
 						$.extend( inst._uiHash(), {

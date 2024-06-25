@@ -158,7 +158,7 @@ return $.widget( "ui.controlgroup", {
 		this.childWidgets.each( function() {
 			var element = $( this ),
 				data = element.data( "ui-controlgroup-data" );
-			if ( data && data[ method ] ) {
+			if ( data?.[method] ) {
 				data[ method ]();
 			}
 		} );
