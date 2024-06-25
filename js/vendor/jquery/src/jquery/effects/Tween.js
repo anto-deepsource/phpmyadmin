@@ -24,7 +24,7 @@ Tween.prototype = {
 	cur: function() {
 		var hooks = Tween.propHooks[ this.prop ];
 
-		return hooks && hooks.get ?
+		return hooks?.get ?
 			hooks.get( this ) :
 			Tween.propHooks._default.get( this );
 	},
@@ -45,7 +45,7 @@ Tween.prototype = {
 			this.options.step.call( this.elem, this.now, this );
 		}
 
-		if ( hooks && hooks.set ) {
+		if ( hooks?.set ) {
 			hooks.set( this );
 		} else {
 			Tween.propHooks._default.set( this );
