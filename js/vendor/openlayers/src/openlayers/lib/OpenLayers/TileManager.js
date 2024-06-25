@@ -370,7 +370,7 @@ OpenLayers.TileManager = OpenLayers.Class({
     drawTilesFromQueue: function(map) {
         var tileQueue = this.tileQueue[map.id];
         var limit = this.tilesPerFrame;
-        var animating = map.zoomTween && map.zoomTween.playing;
+        var animating = map.zoomTween?.playing;
         while (!animating && tileQueue.length && limit) {
             tileQueue.shift().draw(true);
             --limit;

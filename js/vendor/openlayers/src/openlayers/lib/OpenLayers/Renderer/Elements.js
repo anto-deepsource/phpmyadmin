@@ -505,7 +505,7 @@ OpenLayers.Renderer.Elements = OpenLayers.Class(OpenLayers.Renderer, {
     setExtent: function(extent, resolutionChanged) {
         var coordSysUnchanged = OpenLayers.Renderer.prototype.setExtent.apply(this, arguments);
         var resolution = this.getResolution();
-        if (this.map.baseLayer && this.map.baseLayer.wrapDateLine) {
+        if (this.map.baseLayer?.wrapDateLine) {
             var rightOfDateLine,
                 ratio = extent.getWidth() / this.map.getExtent().getWidth(),
                 extent = extent.scale(1 / ratio),
@@ -902,7 +902,7 @@ OpenLayers.Renderer.Elements = OpenLayers.Class(OpenLayers.Renderer, {
      */
     getFeatureIdFromEvent: function(evt) {
         var target = evt.target;
-        var useElement = target && target.correspondingUseElement;
+        var useElement = target?.correspondingUseElement;
         var node = useElement ? useElement : (target || evt.srcElement);
         return node._featureId;
     },
@@ -928,7 +928,7 @@ OpenLayers.Renderer.Elements = OpenLayers.Class(OpenLayers.Renderer, {
             }
         } else {    
             var element = OpenLayers.Util.getElement(geometry.id);
-            if (element && element.parentNode) {
+            if (element?.parentNode) {
                 if (element.geometry) {
                     element.geometry.destroy();
                     element.geometry = null;
@@ -942,7 +942,7 @@ OpenLayers.Renderer.Elements = OpenLayers.Class(OpenLayers.Renderer, {
                 if (element._style.backgroundGraphic) {
                     var backgroundId = geometry.id + this.BACKGROUND_ID_SUFFIX;
                     var bElem = OpenLayers.Util.getElement(backgroundId);
-                    if (bElem && bElem.parentNode) {
+                    if (bElem?.parentNode) {
                         // No need to destroy the geometry since the element and the background
                         // node share the same geometry.
                         bElem.parentNode.removeChild(bElem);

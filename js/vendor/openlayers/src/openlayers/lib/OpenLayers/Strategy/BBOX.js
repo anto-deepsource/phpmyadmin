@@ -124,7 +124,7 @@ OpenLayers.Strategy.BBOX = OpenLayers.Class(OpenLayers.Strategy, {
      */
     update: function(options) {
         var mapBounds = this.getMapBounds();
-        if (mapBounds !== null && ((options && options.force) ||
+        if (mapBounds !== null && ((options?.force) ||
           (this.layer.visibility && this.layer.calculateInRange() && this.invalidBounds(mapBounds)))) {
             this.calculateBounds(mapBounds);
             this.resolution = this.layer.map.getResolution(); 

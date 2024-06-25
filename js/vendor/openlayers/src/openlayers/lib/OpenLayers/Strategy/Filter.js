@@ -81,7 +81,7 @@ OpenLayers.Strategy.Filter = OpenLayers.Class(OpenLayers.Strategy, {
      */
     deactivate: function() {
         this.cache = null;
-        if (this.layer && this.layer.events) {
+        if (this.layer?.events) {
             this.layer.events.un({
                 "beforefeaturesadded": this.handleAdd,
                 "beforefeaturesremoved": this.handleRemove,

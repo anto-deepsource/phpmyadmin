@@ -214,7 +214,7 @@ OpenLayers.Strategy.Paging = OpenLayers.Class(OpenLayers.Strategy, {
                     this.layer.removeFeatures(this.layer.features);
                     this.num = num;
                     // modify the event if any
-                    if(event && event.features) {
+                    if(event?.features) {
                         // this.was called by an event listener
                         event.features = features;
                     } else {
