@@ -28,7 +28,7 @@ class PMA_GetIcon_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function setup()
+    public function setup()
     {
     }
 
@@ -37,7 +37,7 @@ class PMA_GetIcon_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetIconWithoutActionLinksMode()
+    public function testGetIconWithoutActionLinksMode()
     {
         $GLOBALS['cfg']['ActionLinksMode'] = 'text';
 
@@ -52,7 +52,7 @@ class PMA_GetIcon_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetIconWithActionLinksMode()
+    public function testGetIconWithActionLinksMode()
     {
         $GLOBALS['cfg']['ActionLinksMode'] = 'icons';
 
@@ -67,7 +67,7 @@ class PMA_GetIcon_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetIconAlternate()
+    public function testGetIconAlternate()
     {
         $GLOBALS['cfg']['ActionLinksMode'] = 'icons';
         $alternate_text = 'alt_str';
@@ -85,7 +85,7 @@ class PMA_GetIcon_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetIconWithForceText()
+    public function testGetIconWithForceText()
     {
         $GLOBALS['cfg']['ActionLinksMode'] = 'icons';
         $alternate_text = 'alt_str';

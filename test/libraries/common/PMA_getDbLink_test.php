@@ -20,7 +20,7 @@ class PMA_GetDbLink_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function setUp()
+    public function setUp()
     {
         global $cfg;
         include 'libraries/config.default.php';
@@ -34,7 +34,7 @@ class PMA_GetDbLink_Test extends PHPUnit_Framework_TestCase
      *
      * @group medium
      */
-    function testGetDbLinkEmpty()
+    public function testGetDbLinkEmpty()
     {
         $GLOBALS['db'] = null;
         $this->assertEmpty(PhpMyAdmin\Util::getDbLink());
@@ -47,7 +47,7 @@ class PMA_GetDbLink_Test extends PHPUnit_Framework_TestCase
      *
      * @group medium
      */
-    function testGetDbLinkNull()
+    public function testGetDbLinkNull()
     {
         global $cfg;
         $GLOBALS['db'] = 'test_db';
@@ -71,7 +71,7 @@ class PMA_GetDbLink_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDbLink()
+    public function testGetDbLink()
     {
         global $cfg;
         $database = 'test_database';
@@ -92,7 +92,7 @@ class PMA_GetDbLink_Test extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDbLinkWithSpecialChars()
+    public function testGetDbLinkWithSpecialChars()
     {
         global $cfg;
         $database = 'test&data\'base';

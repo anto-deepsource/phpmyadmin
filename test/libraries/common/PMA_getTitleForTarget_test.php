@@ -25,7 +25,7 @@ class PMA_GetTitleForTarget_Test extends PHPUnit_Framework_TestCase
      *
      * @return array
      */
-    function dataProvider()
+    public function dataProvider()
     {
         return array(
             array('tbl_structure.php', __('Structure')),
@@ -50,7 +50,7 @@ class PMA_GetTitleForTarget_Test extends PHPUnit_Framework_TestCase
      *
      * @dataProvider dataProvider
      */
-    function testGetTitleForTarget($target, $result)
+    public function testGetTitleForTarget($target, $result)
     {
         $this->assertEquals(
             $result, PhpMyAdmin\Util::getTitleForTarget($target)

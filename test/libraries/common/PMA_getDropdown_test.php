@@ -25,7 +25,7 @@ class PMA_GetDropdownTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDropdownEmpty()
+    public function testGetDropdownEmpty()
     {
         $name = "test_dropdown_name";
         $choices = array();
@@ -48,7 +48,7 @@ class PMA_GetDropdownTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDropdown()
+    public function testGetDropdown()
     {
         $name = "&test_dropdown_name";
         $choices = array("value_1" => "label_1", "value&_2\"" => "label_2");
@@ -79,7 +79,7 @@ class PMA_GetDropdownTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDropdownWithActive()
+    public function testGetDropdownWithActive()
     {
         $name = "&test_dropdown_name";
         $choices = array("value_1" => "label_1", "value&_2\"" => "label_2");

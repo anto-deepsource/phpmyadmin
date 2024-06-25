@@ -25,7 +25,7 @@ class PMA_GetDivForSliderEffectTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDivForSliderEffectTest()
+    public function testGetDivForSliderEffectTest()
     {
         global $cfg;
         $cfg['InitialSlidersState'] = 'undefined';
@@ -44,7 +44,7 @@ class PMA_GetDivForSliderEffectTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDivForSliderEffectTestClosed()
+    public function testGetDivForSliderEffectTestClosed()
     {
         global $cfg;
         $cfg['InitialSlidersState'] = 'closed';
@@ -64,7 +64,7 @@ class PMA_GetDivForSliderEffectTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    function testGetDivForSliderEffectTestDisabled()
+    public function testGetDivForSliderEffectTestDisabled()
     {
         global $cfg;
         $cfg['InitialSlidersState'] = 'disabled';
