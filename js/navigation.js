@@ -66,7 +66,7 @@ function navFilterStateRestore () {
             return;
         }
         // restore database filter if present and not empty
-        if (searchClauses.hasOwnProperty('dbFilter')
+        if (Object.prototype.hasOwnProperty.call(searchClauses, 'dbFilter')
             && searchClauses.dbFilter.length
         ) {
             $obj = $('#pma_navigation_tree');
@@ -90,7 +90,7 @@ function navFilterStateRestore () {
             // aPath associated with this filter
             var filterName = $(this).siblings('input[name=aPath]').val();
             // if this table's filter has a state stored in storage
-            if (searchClauses.hasOwnProperty(filterName)
+            if (Object.prototype.hasOwnProperty.call(searchClauses, filterName)
                 && searchClauses[filterName].length
             ) {
                 // clear state if item is not visible,

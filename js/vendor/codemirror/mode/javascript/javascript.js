@@ -150,7 +150,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
       return ret("operator", "operator", stream.current());
     } else if (wordRE.test(ch)) {
       stream.eatWhile(wordRE);
-      var word = stream.current(), known = keywords.propertyIsEnumerable(word) && keywords[word];
+      var word = stream.current(), known = Object.propertyIsEnumerable.call(keywords, word) && keywords[word];
       return (known && state.lastType != ".") ? ret(known.type, known.style, word) :
                      ret("variable", "variable", word);
     }
@@ -263,7 +263,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     // (Less wasteful than consing up a hundred closures on every call.)
     cx.state = state; cx.stream = stream; cx.marked = null, cx.cc = cc; cx.style = style;
 
-    if (!state.lexical.hasOwnProperty("align"))
+    if (!Object.prototype.hasOwnProperty.call(state.lexical, 'align'))
       state.lexical.align = true;
 
     while(true) {
@@ -400,7 +400,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     }
 
     var maybeop = noComma ? maybeoperatorNoComma : maybeoperatorComma;
-    if (atomicTypes.hasOwnProperty(type)) return cont(maybeop);
+    if (Object.prototype.hasOwnProperty.call(atomicTypes, type)) return cont(maybeop);
     if (type == "function") return cont(functiondef, maybeop);
     if (type == "class") return cont(pushlex("form"), classExpression, poplex);
     if (type == "keyword c" || type == "async") return cont(noComma ? maybeexpressionNoComma : maybeexpression);
@@ -736,7 +736,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
 
     token: function(stream, state) {
       if (stream.sol()) {
-        if (!state.lexical.hasOwnProperty("align"))
+        if (!Object.prototype.hasOwnProperty.call(state.lexical, 'align'))
           state.lexical.align = false;
         state.indented = stream.indentation();
         findFatArrow(stream, state);

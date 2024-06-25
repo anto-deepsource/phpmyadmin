@@ -148,7 +148,7 @@ OpenLayers.Layer.ArcGIS93Rest = OpenLayers.Class(OpenLayers.Layer.Grid, {
             var layerDefStrList = [];
             var layerID;
             for(layerID in this.layerDefs) {
-                if (this.layerDefs.hasOwnProperty(layerID)) {
+                if (Object.prototype.hasOwnProperty.call(this.layerDefs, layerID)) {
                     if (this.layerDefs[layerID]) {
                         layerDefStrList.push(layerID);
                         layerDefStrList.push(":");

@@ -113,7 +113,7 @@ OpenLayers.Util.extend = function(destination, source) {
                           && source instanceof window.Event;
 
         if (!sourceIsEvt
-           && source.hasOwnProperty && source.hasOwnProperty("toString")) {
+           && source.hasOwnProperty && Object.prototype.hasOwnProperty.call(source, 'toString')) {
             destination.toString = source.toString;
         }
     }

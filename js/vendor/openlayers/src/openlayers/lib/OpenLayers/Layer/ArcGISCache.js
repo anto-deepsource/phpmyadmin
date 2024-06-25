@@ -177,7 +177,7 @@ OpenLayers.Layer.ArcGISCache = OpenLayers.Class(OpenLayers.Layer.XYZ, {
                 
                 this.lods = [];
                 for(var key in info.tileInfo.lods) {
-                    if (info.tileInfo.lods.hasOwnProperty(key)) {
+                    if (Object.prototype.hasOwnProperty.call(info.tileInfo.lods, key)) {
                         var lod = info.tileInfo.lods[key];
                         if (this.useScales) {
                             this.scales.push(lod.scale);

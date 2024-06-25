@@ -159,7 +159,7 @@ OpenLayers.Format.WMTSCapabilities = OpenLayers.Class(OpenLayers.Format.XML.Vers
         for (var id = 0, ld = layerDef.dimensions.length ; id < ld ; id++) {
             var dimension = layerDef.dimensions[id];
             dimensions.push(dimension.identifier);
-            if (!params.hasOwnProperty(dimension.identifier)) {
+            if (!Object.prototype.hasOwnProperty.call(params, dimension.identifier)) {
                 params[dimension.identifier] = dimension['default'];
             }
         }
@@ -171,7 +171,7 @@ OpenLayers.Format.WMTSCapabilities = OpenLayers.Class(OpenLayers.Format.XML.Vers
 
         var resolutions = [];
         for (var mid in matrixSet.matrixIds) {
-            if (matrixSet.matrixIds.hasOwnProperty(mid)) {
+            if (Object.prototype.hasOwnProperty.call(matrixSet.matrixIds, mid)) {
                 resolutions.push(
                     matrixSet.matrixIds[mid].scaleDenominator * 0.28E-3 /
                         OpenLayers.METERS_PER_INCH /

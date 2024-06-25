@@ -218,7 +218,7 @@ OpenLayers.Control = OpenLayers.Class({
         }
         if(this.handlers) {
             for(var key in this.handlers) {
-                if(this.handlers.hasOwnProperty(key) &&
+                if(Object.prototype.hasOwnProperty.call(this.handlers, key) &&
                    typeof this.handlers[key].destroy == "function") {
                     this.handlers[key].destroy();
                 }

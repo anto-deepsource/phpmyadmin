@@ -515,7 +515,7 @@ OpenLayers.Layer = OpenLayers.Class({
                 ["projection", "units", "minExtent", "maxExtent"]
             );
             for(var o in newOptions) {
-                if(newOptions.hasOwnProperty(o) &&
+                if(Object.prototype.hasOwnProperty.call(newOptions, o) &&
                    OpenLayers.Util.indexOf(properties, o) >= 0) {
 
                     this.initResolutions();

@@ -215,7 +215,7 @@
                     if (j>0) {
                         intv = Math.abs(d[j][0] - d[j-1][0]);
                         stats.intervals.push(intv);
-                        if (stats.frequencies.hasOwnProperty(intv)) {
+                        if (Object.prototype.hasOwnProperty.call(stats.frequencies, intv)) {
                             stats.frequencies[intv] += 1;
                         }
                         else {
@@ -238,7 +238,7 @@
                     if (j>0) {
                         intv = Math.abs(d[j][1] - d[j-1][1]);
                         stats.intervals.push(intv);
-                        if (stats.frequencies.hasOwnProperty(intv)) {
+                        if (Object.prototype.hasOwnProperty.call(stats.frequencies, intv)) {
                             stats.frequencies[intv] += 1;
                         }
                         else {

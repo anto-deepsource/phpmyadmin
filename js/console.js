@@ -1202,7 +1202,7 @@ PMA_consoleDebug = {
         var config = Cookies.getJSON('pma_console_dbg_config');
         if (config) {
             for (var name in config) {
-                if (config.hasOwnProperty(name)) {
+                if (Object.prototype.hasOwnProperty.call(config, name)) {
                     this._config[name] = config[name];
                 }
             }
@@ -1272,7 +1272,7 @@ PMA_consoleDebug = {
         var step;
         var $stepElem;
         for (var stepId in dbgTrace) {
-            if (dbgTrace.hasOwnProperty(stepId)) {
+            if (Object.prototype.hasOwnProperty.call(dbgTrace, stepId)) {
                 step = dbgTrace[stepId];
                 if (!Array.isArray(step) && typeof step !== 'object') {
                     $stepElem =
@@ -1441,7 +1441,7 @@ PMA_consoleDebug = {
         var totalUnique = 0;
         var uniqueArray = [];
         for (var hash in uniqueQueries) {
-            if (uniqueQueries.hasOwnProperty(hash)) {
+            if (Object.prototype.hasOwnProperty.call(uniqueQueries, hash)) {
                 ++totalUnique;
                 uniqueArray.push(uniqueQueries[hash]);
             }

@@ -480,7 +480,7 @@ OpenLayers.Util.applyDefaults = function (to, from) {
     for (var key in from) {
         if (to[key] === undefined ||
             (!fromIsEvt && from.hasOwnProperty
-             && from.hasOwnProperty(key) && !to.hasOwnProperty(key))) {
+             && Object.prototype.hasOwnProperty.call(from, key) && !Object.prototype.hasOwnProperty.call(to, key))) {
             to[key] = from[key];
         }
     }
@@ -490,7 +490,7 @@ OpenLayers.Util.applyDefaults = function (to, from) {
      * the source has its own toString property.
      */
     if(!fromIsEvt && from && from.hasOwnProperty
-       && from.hasOwnProperty('toString') && !to.hasOwnProperty('toString')) {
+       && Object.prototype.hasOwnProperty.call(from, 'toString') && !Object.prototype.hasOwnProperty.call(to, 'toString')) {
         to.toString = from.toString;
     }
     

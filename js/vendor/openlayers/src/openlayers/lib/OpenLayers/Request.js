@@ -186,7 +186,7 @@ OpenLayers.Util.extend(OpenLayers.Request, {
         var customRequestedWithHeader = false,
             headerKey;
         for(headerKey in config.headers) {
-            if (config.headers.hasOwnProperty( headerKey )) {
+            if (Object.prototype.hasOwnProperty.call(config.headers, headerKey)) {
                 if (headerKey.toLowerCase() === 'x-requested-with') {
                     customRequestedWithHeader = true;
                 }

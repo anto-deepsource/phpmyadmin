@@ -176,18 +176,18 @@
       if (typeof val != "string")
         bound = function(cm) { return val(cm, handle); };
       // This mechanism is deprecated
-      else if (baseMap.hasOwnProperty(val))
+      else if (Object.prototype.hasOwnProperty.call(baseMap, val))
         bound = baseMap[val];
       else
         bound = val;
       ourMap[key] = bound;
     }
     if (custom)
-      for (var key in custom) if (custom.hasOwnProperty(key))
+      for (var key in custom) if (Object.prototype.hasOwnProperty.call(custom, key))
         addBinding(key, custom[key]);
     var extra = completion.options.extraKeys;
     if (extra)
-      for (var key in extra) if (extra.hasOwnProperty(key))
+      for (var key in extra) if (Object.prototype.hasOwnProperty.call(extra, key))
         addBinding(key, extra[key]);
     return ourMap;
   }

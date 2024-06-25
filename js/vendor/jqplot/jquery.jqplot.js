@@ -837,7 +837,7 @@
                     doforce = false;
                 }
 
-                else if (doforce && this._options.hasOwnProperty('forceTickAt0') && this._options.forceTickAt0 == false) {
+                else if (doforce && Object.prototype.hasOwnProperty.call(this._options, 'forceTickAt0') && this._options.forceTickAt0 == false) {
                     doforce = false;
                 }
 
@@ -8452,7 +8452,7 @@
             a.borderWidth = ax.borderWidth;
             if (ax._ticks && ax._ticks[0]) {
                 for (nn in a.ticks) {
-                    if (ax._ticks[0].hasOwnProperty(nn)) {
+                    if (Object.prototype.hasOwnProperty.call(ax._ticks[0], nn)) {
                         a.ticks[nn] = ax._ticks[0][nn];
                     }
                     else if (ax._ticks[0]._elem){
@@ -8560,7 +8560,7 @@
         if (!name && this.activeTheme && this.activeTheme._name) {
             name = this.activeTheme._name;
         }
-        if (!this.themes.hasOwnProperty(name)) {
+        if (!Object.prototype.hasOwnProperty.call(this.themes, name)) {
             throw new Error("No theme of that name");
         }
         else {
@@ -8706,7 +8706,7 @@
         if (!theme._name) {
             theme._name = Date.parse(new Date());
         }
-        if (!this.themes.hasOwnProperty(theme._name)) {
+        if (!Object.prototype.hasOwnProperty.call(this.themes, theme._name)) {
             this.themes[theme._name] = theme;
         }
         else {
@@ -8796,7 +8796,7 @@
                 obj1[key] = clone(obj2[key]);
             }
             if (obj2[key] != null && typeof(obj2[key]) == 'object') {
-                if (!obj1.hasOwnProperty(key)) {
+                if (!Object.prototype.hasOwnProperty.call(obj1, key)) {
                     obj1[key] = {};
                 }
                 merge(obj1[key], obj2[key]);
@@ -8875,10 +8875,10 @@
         if (oldName == 'Default' || newName == 'Default') {
             throw new Error ("jqplot.ThemeEngine Error: Cannot rename from/to Default");
         }
-        if (this.themes.hasOwnProperty(newName)) {
+        if (Object.prototype.hasOwnProperty.call(this.themes, newName)) {
             throw new Error ("jqplot.ThemeEngine Error: New name already in use.");
         }
-        else if (this.themes.hasOwnProperty(oldName)) {
+        else if (Object.prototype.hasOwnProperty.call(this.themes, oldName)) {
             var th = this.copy (oldName, newName);
             this.remove(oldName);
             return th;
@@ -8905,11 +8905,11 @@
         if (targetName == 'Default') {
             throw new Error ("jqplot.ThemeEngine Error: Cannot copy over Default theme");
         }
-        if (!this.themes.hasOwnProperty(sourceName)) {
+        if (!Object.prototype.hasOwnProperty.call(this.themes, sourceName)) {
             var s = "jqplot.ThemeEngine Error: Source name invalid";
             throw new Error(s);
         }
-        if (this.themes.hasOwnProperty(targetName)) {
+        if (Object.prototype.hasOwnProperty.call(this.themes, targetName)) {
             var s = "jqplot.ThemeEngine Error: Target name invalid";
             throw new Error(s);
         }
@@ -10122,7 +10122,7 @@
         
         if ( document && document.getElementsByTagName('html') && document.getElementsByTagName('html')[0].lang ) {
             l = document.getElementsByTagName('html')[0].lang;
-            if (!jsDate.regional.hasOwnProperty(l)) {
+            if (!Object.prototype.hasOwnProperty.call(jsDate.regional, l)) {
                 l = jsDate.config.defaultLocale;
             }
         }
@@ -10242,17 +10242,17 @@
         var loc = jsDate.regional.getLocale();
         
         // check if syntax and locale are available or reversed
-        if (syntax && jsDate.formats.hasOwnProperty(syntax)) {
+        if (syntax && Object.prototype.hasOwnProperty.call(jsDate.formats, syntax)) {
             syn = syntax;
         }
-        else if (syntax && jsDate.regional.hasOwnProperty(syntax)) {
+        else if (syntax && Object.prototype.hasOwnProperty.call(jsDate.regional, syntax)) {
             loc = syntax;
         }
         
-        if (locale && jsDate.formats.hasOwnProperty(locale)) {
+        if (locale && Object.prototype.hasOwnProperty.call(jsDate.formats, locale)) {
             syn = locale;
         }
-        else if (locale && jsDate.regional.hasOwnProperty(locale)) {
+        else if (locale && Object.prototype.hasOwnProperty.call(jsDate.regional, locale)) {
             loc = locale;
         }
         

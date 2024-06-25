@@ -132,7 +132,7 @@ PMA_MicroHistory = {
             var size = 0;
             var key;
             for (key in obj) {
-                if (obj.hasOwnProperty(key)) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) {
                     size++;
                 }
             }
