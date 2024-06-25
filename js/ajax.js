@@ -215,9 +215,9 @@ var AJAX = {
             // reset the lockedTargets object, as specified AJAX operation has finished
             AJAX.resetLock();
             return true;
-        } else if (href && href.match(/^#/)) {
+        } else if (href?.match(/^#/)) {
             return true;
-        } else if (href && href.match(/^mailto/)) {
+        } else if (href?.match(/^mailto/)) {
             return true;
         } else if ($(this).hasClass('ui-datepicker-next') ||
             $(this).hasClass('ui-datepicker-prev')
@@ -277,7 +277,7 @@ var AJAX = {
         if (! isLink) {
             params += '&' + $(this).serialize();
         }
-        if (! (history && history.pushState)) {
+        if (! (history?.pushState)) {
             // Add a list of menu hashes that we have in the cache to the request
             params += PMA_MicroHistory.menus.getRequestParam();
         }
@@ -291,7 +291,7 @@ var AJAX = {
             AJAX.$msgbox = PMA_ajaxShowMessage();
             // Save reference for the new link request
             AJAX.xhr = $.get(url, params, AJAX.responseHandler);
-            if (history && history.pushState) {
+            if (history?.pushState) {
                 var state = {
                     url : href
                 };
@@ -360,7 +360,7 @@ var AJAX = {
                     $('title').replaceWith(data._title);
                 }
                 if (data._menu) {
-                    if (history && history.pushState) {
+                    if (history?.pushState) {
                         var state = {
                             url : data._selflink,
                             menu : data._menu
@@ -372,7 +372,7 @@ var AJAX = {
                         PMA_MicroHistory.menus.add(data._menuHash, data._menu);
                     }
                 } else if (data._menuHash) {
-                    if (! (history && history.pushState)) {
+                    if (! (history?.pushState)) {
                         PMA_MicroHistory.menus.replace(PMA_MicroHistory.menus.get(data._menuHash));
                     }
                 }
@@ -426,7 +426,7 @@ var AJAX = {
                     AJAX.scriptHandler.load(data._scripts);
                 }
                 if (data._selflink && data._scripts && data._menuHash && data._params) {
-                    if (! (history && history.pushState)) {
+                    if (! (history?.pushState)) {
                         PMA_MicroHistory.add(
                             data._selflink,
                             data._scripts,
@@ -647,7 +647,7 @@ var AJAX = {
              */
             $(document).off('click', 'a').on('click', 'a', AJAX.requestHandler);
             $(document).off('submit', 'form').on('submit', 'form', AJAX.requestHandler);
-            if (! (history && history.pushState)) {
+            if (! (history?.pushState)) {
                 PMA_MicroHistory.update();
             }
             callback();
@@ -727,7 +727,7 @@ $(function () {
         .append($('#serverinfo').clone())
         .append($('#topmenucontainer').clone())
         .html();
-    if (history && history.pushState) {
+    if (history?.pushState) {
         // set initial state reload
         var initState = ('state' in window.history && window.history.state !== null);
         var initURL = $('#selflink').find('> a').attr('href') || location.href;
@@ -745,7 +745,7 @@ $(function () {
                 return;
             }
             var state = event.originalEvent.state;
-            if (state && state.menu) {
+            if (state?.menu) {
                 AJAX.$msgbox = PMA_ajaxShowMessage();
                 var params = 'ajax_request=true&ajax_page_request=true';
                 var url = state.url || location.href;

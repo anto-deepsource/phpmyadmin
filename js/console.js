@@ -230,7 +230,7 @@ var PMA_console = {
         }
         PMA_console.$requestForm.children('textarea').val(queryString);
         PMA_console.$requestForm.children('[name=server]').attr('value', PMA_commonParams.get('server'));
-        if (options && options.db) {
+        if (options?.db) {
             PMA_console.$requestForm.children('[name=db]').val(options.db);
             if (options.table) {
                 PMA_console.$requestForm.children('[name=table]').val(options.table);
@@ -255,10 +255,10 @@ var PMA_console = {
         PMA_reloadNavigation();
     },
     ajaxCallback: function (data) {
-        if (data && data.console_message_id) {
+        if (data?.console_message_id) {
             PMA_consoleMessages.updateQuery(data.console_message_id, data.success,
                 (data._reloadQuerywindow ? data._reloadQuerywindow : false));
-        } else if (data && data._reloadQuerywindow) {
+        } else if (data?._reloadQuerywindow) {
             if (data._reloadQuerywindow.sql_query.length > 0) {
                 PMA_consoleMessages.appendQuery(data._reloadQuerywindow, 'successed')
                     .$message.addClass(PMA_console.config.currentQuery ? '' : 'hide');
@@ -1223,7 +1223,7 @@ PMA_consoleDebug = {
             functionName += dbgStep.type;
         }
         functionName += dbgStep.function;
-        if (dbgStep.args && dbgStep.args.length) {
+        if (dbgStep.args?.length) {
             functionName += '(...)';
         } else {
             functionName += '()';
@@ -1292,7 +1292,7 @@ PMA_consoleDebug = {
                             .append(
                                 $('<span class="file">').text(this._formatFileName(step))
                             );
-                    if (step.args && step.args.length) {
+                    if (step.args?.length) {
                         $stepElem
                             .append(
                                 $('<span class="args">').html(this._formatFunctionArgs(step))

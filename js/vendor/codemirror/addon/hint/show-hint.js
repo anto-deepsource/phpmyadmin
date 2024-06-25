@@ -18,7 +18,7 @@
   // backwards-compatible.
   CodeMirror.showHint = function(cm, getHints, options) {
     if (!getHints) return cm.showHint(options);
-    if (options && options.async) getHints.async = true;
+    if (options?.async) getHints.async = true;
     var newOpts = {hint: getHints};
     if (options) for (var prop in options) newOpts[prop] = options[prop];
     return cm.showHint(newOpts);
@@ -118,13 +118,13 @@
     finishUpdate: function(data, first) {
       if (this.data) CodeMirror.signal(this.data, "update");
 
-      var picked = (this.widget && this.widget.picked) || (first && this.options.completeSingle);
+      var picked = (this.widget?.picked) || (first && this.options.completeSingle);
       if (this.widget) this.widget.close();
 
       if (data && this.data && isNewCompletion(this.data, data)) return;
       this.data = data;
 
-      if (data && data.list.length) {
+      if (data?.list.length) {
         if (picked && data.list.length == 1) {
           this.pick(data, 0);
         } else {
@@ -367,7 +367,7 @@
       hint(cm, callback, options)
     } else {
       var result = hint(cm, options)
-      if (result && result.then) result.then(callback)
+      if (result?.then) result.then(callback)
       else callback(result)
     }
   }

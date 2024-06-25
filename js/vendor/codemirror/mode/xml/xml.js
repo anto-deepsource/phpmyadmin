@@ -190,7 +190,7 @@ CodeMirror.defineMode("xml", function(editorConf, config_) {
     this.tagName = tagName;
     this.indent = state.indented;
     this.startOfLine = startOfLine;
-    if (Object.prototype.hasOwnProperty.call(config.doNotIndent, tagName) || (state.context && state.context.noIndent))
+    if (Object.prototype.hasOwnProperty.call(config.doNotIndent, tagName) || (state.context?.noIndent))
       this.noIndent = true;
   }
   function popContext(state) {
@@ -334,7 +334,7 @@ CodeMirror.defineMode("xml", function(editorConf, config_) {
         else
           return state.indented + indentUnit;
       }
-      if (context && context.noIndent) return CodeMirror.Pass;
+      if (context?.noIndent) return CodeMirror.Pass;
       if (state.tokenize != inTag && state.tokenize != inText)
         return fullLine ? fullLine.match(/^(\s*)/)[0].length : 0;
       // Indent the starts of attribute names.
@@ -346,7 +346,7 @@ CodeMirror.defineMode("xml", function(editorConf, config_) {
       }
       if (config.alignCDATA && /<!\[CDATA\[/.test(textAfter)) return 0;
       var tagAfter = textAfter && /^<(\/)?([\w_:\.-]*)/.exec(textAfter);
-      if (tagAfter && tagAfter[1]) { // Closing tag spotted
+      if (tagAfter?.[1]) { // Closing tag spotted
         while (context) {
           if (context.tagName == tagAfter[2]) {
             context = context.prev;
@@ -366,7 +366,7 @@ CodeMirror.defineMode("xml", function(editorConf, config_) {
             break;
         }
       }
-      while (context && context.prev && !context.startOfLine)
+      while (context?.prev && !context.startOfLine)
         context = context.prev;
       if (context) return context.indent + indentUnit;
       else return state.baseIndent || 0;

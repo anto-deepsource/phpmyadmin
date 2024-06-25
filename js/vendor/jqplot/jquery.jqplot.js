@@ -2000,7 +2000,7 @@
             // if no height or width specified, use a default.
             if (!this.target.height()) {
                 var h;
-                if (options && options.height) {
+                if (options?.height) {
                     h = parseInt(options.height, 10);
                 }
                 else if (this.target.attr('data-height')) {
@@ -2017,7 +2017,7 @@
             }
             if (!this.target.width()) {
                 var w;
-                if (options && options.width) {
+                if (options?.width) {
                     w = parseInt(options.width, 10);
                 }
                 else if (this.target.attr('data-width')) {
@@ -2841,7 +2841,7 @@
         // Releases all resources occupied by the plot
         this.destroy = function() {
             this.canvasManager.freeAllCanvases();
-            if (this.eventCanvas && this.eventCanvas._elem) {
+            if (this.eventCanvas?._elem) {
                 this.eventCanvas._elem.unbind();
             }
             // Couple of posts on Stack Overflow indicate that empty() doesn't
@@ -3183,7 +3183,7 @@
                     temps = series[i];
                     tempr = temps.renderer;
                     sel = '.jqplot-point-label.jqplot-series-'+i;
-                    if (tempr.animation && tempr.animation._supported && tempr.animation.show && (this._drawCount < 2 || this.animateReplot)) {
+                    if (tempr.animation?._supported && tempr.animation.show && (this._drawCount < 2 || this.animateReplot)) {
                         _els = this.target.find(sel);
                         _els.stop(true, true).hide();
                         temps.canvas._elem.stop(true, true).hide();
@@ -4841,7 +4841,7 @@
             }
         }
 
-        if (!(pattern && pattern.length)) {
+        if (!(pattern?.length)) {
             return ctx;
         }
 
@@ -6005,7 +6005,7 @@
     // insert it before the eventCanvas, so eventCanvas will still capture events.
     function postPlotDraw() {
         // Memory Leaks patch    
-        if (this.plugins.lineRenderer && this.plugins.lineRenderer.highlightCanvas) {
+        if (this.plugins.lineRenderer?.highlightCanvas) {
           this.plugins.lineRenderer.highlightCanvas.resetCanvas();
           this.plugins.lineRenderer.highlightCanvas = null;
         }
@@ -7730,7 +7730,7 @@
                     ctx.fillRect(points[0], points[1], points[2], points[3]);
                 }
             }
-            else if (points && points.length){
+            else if (points?.length){
                 var move = true;
                 for (var i=0; i<points.length; i++) {
                     // skip to the first non-null point and move to it.
@@ -7867,7 +7867,7 @@
                 return;
             }
         }
-        else if (points && points.length){
+        else if (points?.length){
             var move = true;
             for (var i=0; i<points.length; i++) {
                 // skip to the first non-null point and move to it.
@@ -8450,7 +8450,7 @@
             a = th.axes[n] = new AxisProperties();
             a.borderColor = ax.borderColor;
             a.borderWidth = ax.borderWidth;
-            if (ax._ticks && ax._ticks[0]) {
+            if (ax._ticks?.[0]) {
                 for (nn in a.ticks) {
                     if (Object.prototype.hasOwnProperty.call(ax._ticks[0], nn)) {
                         a.ticks[nn] = ax._ticks[0][nn];
@@ -8460,7 +8460,7 @@
                     }
                 }
             }
-            if (ax._label && ax._label.show) {
+            if (ax._label?.show) {
                 for (nn in a.label) {
                     // a.label[nn] = ax._label._elem.css(nn);
                     if (ax._label[nn]) {
@@ -8595,7 +8595,7 @@
                         axis.borderWidth = thax.borderWidth;
                         redrawPlot = true;
                     }
-                    if (axis._ticks && axis._ticks[0]) {
+                    if (axis._ticks?.[0]) {
                         for (var nn in thax.ticks) {
                             // val = null;
                             // if (th.axesStyles.ticks && th.axesStyles.ticks[nn] != null) {
@@ -8612,7 +8612,7 @@
                             }
                         }
                     }
-                    if (axis._label && axis._label.show) {
+                    if (axis._label?.show) {
                         for (var nn in thax.label) {
                             // val = null;
                             // if (th.axesStyles.label && th.axesStyles.label[nn] != null) {
@@ -8757,7 +8757,7 @@
             obj = obj || name;
             name = null;
         }
-        if (obj && obj._name) {
+        if (obj?._name) {
             name = obj._name;
         }
         else {
@@ -10120,7 +10120,7 @@
     jsDate.regional.getLocale = function () {
         var l = jsDate.config.defaultLocale;
         
-        if ( document && document.getElementsByTagName('html') && document.getElementsByTagName('html')[0].lang ) {
+        if ( document?.getElementsByTagName('html') && document.getElementsByTagName('html')[0].lang ) {
             l = document.getElementsByTagName('html')[0].lang;
             if (!Object.prototype.hasOwnProperty.call(jsDate.regional, l)) {
                 l = jsDate.config.defaultLocale;
