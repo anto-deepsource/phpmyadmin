@@ -39,15 +39,15 @@ class Pdf extends PdfLib
     /**
      * Defines properties
      */
-    var $_xMin;
-    var $_yMin;
-    var $leftMargin = 10;
-    var $topMargin = 10;
-    var $scale;
-    var $PMA_links;
-    var $Outlines = array();
-    var $def_outlines;
-    var $widths;
+    public $_xMin;
+    public $_yMin;
+    public $leftMargin = 10;
+    public $topMargin = 10;
+    public $scale;
+    public $PMA_links;
+    public $Outlines = array();
+    public $def_outlines;
+    public $widths;
     private $_ff = PdfLib::PMA_PDF_FONT;
     private $_offline;
     private $_pageNumber;
