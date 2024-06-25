@@ -129,7 +129,7 @@ jQuery.Callbacks = function( options ) {
 								if ( !options.unique || !self.has( arg ) ) {
 									list.push( arg );
 								}
-							} else if ( arg && arg.length && jQuery.type( arg ) !== "string" ) {
+							} else if ( arg?.length && jQuery.type( arg ) !== "string" ) {
 
 								// Inspect recursively
 								add( arg );

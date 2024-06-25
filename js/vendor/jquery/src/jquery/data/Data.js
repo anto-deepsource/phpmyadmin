@@ -71,7 +71,7 @@ Data.prototype = {
 			this.cache( owner ) :
 
 			// Always use camelCase key (gh-2257)
-			owner[ this.expando ] && owner[ this.expando ][ jQuery.camelCase( key ) ];
+			owner[ this.expando ]?.[jQuery.camelCase( key )];
 	},
 	access: function( owner, key, value ) {
 

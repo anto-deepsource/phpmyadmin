@@ -135,7 +135,7 @@ function defaultPrefilter( elem, props, opts ) {
 					continue;
 				}
 			}
-			orig[ prop ] = dataShow && dataShow[ prop ] || jQuery.style( elem, prop );
+			orig[ prop ] = dataShow?.[prop] || jQuery.style( elem, prop );
 		}
 	}
 
@@ -154,7 +154,7 @@ function defaultPrefilter( elem, props, opts ) {
 		opts.overflow = [ style.overflow, style.overflowX, style.overflowY ];
 
 		// Identify a display type, preferring old show/hide data over the CSS cascade
-		restoreDisplay = dataShow && dataShow.display;
+		restoreDisplay = dataShow?.display;
 		if ( restoreDisplay == null ) {
 			restoreDisplay = dataPriv.get( elem, "display" );
 		}
@@ -550,12 +550,12 @@ jQuery.fn.extend( {
 				data = dataPriv.get( this );
 
 			if ( index ) {
-				if ( data[ index ] && data[ index ].stop ) {
+				if ( data[ index ]?.stop ) {
 					stopQueue( data[ index ] );
 				}
 			} else {
 				for ( index in data ) {
-					if ( data[ index ] && data[ index ].stop && rrun.test( index ) ) {
+					if ( data[ index ]?.stop && rrun.test( index ) ) {
 						stopQueue( data[ index ] );
 					}
 				}
@@ -597,7 +597,7 @@ jQuery.fn.extend( {
 			// Empty the queue first
 			jQuery.queue( this, type, [] );
 
-			if ( hooks && hooks.stop ) {
+			if ( hooks?.stop ) {
 				hooks.stop.call( this, true );
 			}
 
@@ -611,7 +611,7 @@ jQuery.fn.extend( {
 
 			// Look for any animations in the old queue and finish them
 			for ( index = 0; index < length; index++ ) {
-				if ( queue[ index ] && queue[ index ].finish ) {
+				if ( queue[ index ]?.finish ) {
 					queue[ index ].finish.call( this );
 				}
 			}

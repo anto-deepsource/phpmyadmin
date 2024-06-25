@@ -53,7 +53,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 
 	parsed = buildFragment( [ data ], context, scripts );
 
-	if ( scripts && scripts.length ) {
+	if ( scripts?.length ) {
 		jQuery( scripts ).remove();
 	}
 

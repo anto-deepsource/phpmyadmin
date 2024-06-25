@@ -104,7 +104,7 @@ if ( !support.optSelected ) {
 			/* eslint no-unused-expressions: "off" */
 
 			var parent = elem.parentNode;
-			if ( parent && parent.parentNode ) {
+			if ( parent?.parentNode ) {
 				parent.parentNode.selectedIndex;
 			}
 			return null;
