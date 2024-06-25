@@ -26,7 +26,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
 
   // Tokenizer
 
-  var keywords = function(){
+  var keywords = (function(){
     function kw(type) {return {type: type, style: "keyword"};}
     var A = kw("keyword a"), B = kw("keyword b"), C = kw("keyword c");
     var operator = kw("operator"), atom = {type: "atom", style: "atom"};
@@ -74,7 +74,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     }
 
     return jsKeywords;
-  }();
+  }());
 
   var isOperatorChar = /[+\-*&%=<>!?|~^@]/;
   var isJsonldKeyword = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)"/;

@@ -1313,13 +1313,13 @@ function e_button(e) {
 }
 
 // Detect drag-and-drop
-var dragAndDrop = function() {
+var dragAndDrop = (function() {
   // There is *some* kind of drag-and-drop support in IE6-8, but I
   // couldn't get it to work yet.
   if (ie && ie_version < 9) { return false }
   var div = elt('div')
   return "draggable" in div || "dragDrop" in div
-}()
+}())
 
 var zwspSupported
 function zeroWidthElement(measure) {
