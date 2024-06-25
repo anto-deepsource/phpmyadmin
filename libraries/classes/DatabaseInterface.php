@@ -959,37 +959,6 @@ class DatabaseInterface
         }
 
         return $databases;
-    }
-
-    /**
-     * usort comparison callback
-     *
-     * @param string $a first argument to sort
-     * @param string $b second argument to sort
-     *
-     * @return integer  a value representing whether $a should be before $b in the
-     *                   sorted array or not
-     *
-     * @access  private
-     */
-    private static function _usortComparisonCallback($a, $b)
-    {
-        if ($GLOBALS['cfg']['NaturalOrder']) {
-            $sorter = 'strnatcasecmp';
-        } else {
-            $sorter = 'strcasecmp';
-        }
-        /* No sorting when key is not present */
-        if (! isset($a[$GLOBALS['callback_sort_by']])
-            || ! isset($b[$GLOBALS['callback_sort_by']])
-        ) {
-            return 0;
-        }
-        // produces f.e.:
-        // return -1 * strnatcasecmp($a["SCHEMA_TABLES"], $b["SCHEMA_TABLES"])
-        return ($GLOBALS['callback_sort_order'] == 'ASC' ? 1 : -1) * $sorter(
-            $a[$GLOBALS['callback_sort_by']], $b[$GLOBALS['callback_sort_by']]
-        );
     } // end of the '_usortComparisonCallback()' method
 
     /**
