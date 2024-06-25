@@ -36,7 +36,7 @@ $.cleanData = ( function( orig ) {
 
 				// Only trigger remove when necessary to save time
 				events = $._data( elem, "events" );
-				if ( events && events.remove ) {
+				if ( events?.remove ) {
 					$( elem ).triggerHandler( "remove" );
 				}
 
@@ -244,7 +244,7 @@ $.widget.bridge = function( name, object ) {
 					methodValue = instance[ options ].apply( instance, args );
 
 					if ( methodValue !== instance && methodValue !== undefined ) {
-						returnValue = methodValue && methodValue.jquery ?
+						returnValue = methodValue?.jquery ?
 							returnValue.pushStack( methodValue.get() ) :
 							methodValue;
 						return false;

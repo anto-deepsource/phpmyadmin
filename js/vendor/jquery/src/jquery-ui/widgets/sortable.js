@@ -570,7 +570,7 @@ return $.widget( "ui.sortable", $.ui.mouse, {
 
 	serialize: function( o ) {
 
-		var items = this._getItemsAsjQuery( o && o.connected ),
+		var items = this._getItemsAsjQuery( o?.connected ),
 			str = [];
 		o = o || {};
 
@@ -594,7 +594,7 @@ return $.widget( "ui.sortable", $.ui.mouse, {
 
 	toArray: function( o ) {
 
-		var items = this._getItemsAsjQuery( o && o.connected ),
+		var items = this._getItemsAsjQuery( o?.connected ),
 			ret = [];
 
 		o = o || {};
@@ -852,7 +852,7 @@ return $.widget( "ui.sortable", $.ui.mouse, {
 			item.top = p.top;
 		}
 
-		if ( this.options.custom && this.options.custom.refreshContainers ) {
+		if ( this.options.custom?.refreshContainers ) {
 			this.options.custom.refreshContainers.call( this );
 		} else {
 			for ( i = this.containers.length - 1; i >= 0; i-- ) {

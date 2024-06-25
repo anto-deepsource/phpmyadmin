@@ -667,7 +667,7 @@ $.widget( "ui.autocomplete", $.ui.autocomplete, {
 		if ( this.options.disabled || this.cancelSearch ) {
 			return;
 		}
-		if ( content && content.length ) {
+		if ( content?.length ) {
 			message = this.options.messages.results( content.length );
 		} else {
 			message = this.options.messages.noResults;

@@ -753,7 +753,7 @@ function getElementStyles( elem ) {
 			elem.currentStyle,
 		styles = {};
 
-	if ( style && style.length && style[ 0 ] && style[ style[ 0 ] ] ) {
+	if ( style?.length && style[ 0 ] && style[ style[ 0 ] ] ) {
 		len = style.length;
 		while ( len-- ) {
 			key = style[ len ];
@@ -932,7 +932,7 @@ $.fn.extend( {
 
 ( function() {
 
-if ( $.expr && $.expr.filters && $.expr.filters.animated ) {
+if ( $.expr?.filters && $.expr.filters.animated ) {
 	$.expr.filters.animated = ( function( orig ) {
 		return function( elem ) {
 			return !!$( elem ).data( dataSpaceAnimated ) || orig( elem );
