@@ -240,7 +240,7 @@ OpenLayers.Projection.transform = function(point, source, dest) {
             var sourceCode = source.getCode();
             var destCode = dest.getCode();
             var transforms = OpenLayers.Projection.transforms;
-            if (transforms[sourceCode] && transforms[sourceCode][destCode]) {
+            if (transforms[sourceCode]?.[destCode]) {
                 transforms[sourceCode][destCode](point);
             }
         }

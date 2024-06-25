@@ -592,7 +592,7 @@ TraceKit.computeStackTrace = (function computeStackTraceWrapper() {
      * @memberof TraceKit.computeStackTrace
      */
     function findSourceByFunctionBody(func) {
-        if (_isUndefined(window && window.document)) {
+        if (_isUndefined(window?.document)) {
             return;
         }
 
@@ -758,7 +758,7 @@ TraceKit.computeStackTrace = (function computeStackTraceWrapper() {
             return null;
         }
 
-        if (stack[0] && stack[0].line && !stack[0].column && reference) {
+        if (stack[0]?.line && !stack[0].column && reference) {
             stack[0].column = findSourceInLine(reference[1], stack[0].url, stack[0].line);
         } else if (!stack[0].column && !_isUndefined(ex.columnNumber)) {
             // FireFox uses this awesome columnNumber property for its top frame
@@ -882,7 +882,7 @@ TraceKit.computeStackTrace = (function computeStackTraceWrapper() {
             lineRE2 = /^\s*Line (\d+) of inline#(\d+) script in ((?:file|https?|blob)\S+)(?:: in function (\S+))?\s*$/i,
             lineRE3 = /^\s*Line (\d+) of function script\s*$/i,
             stack = [],
-            scripts = (window && window.document && window.document.getElementsByTagName('script')),
+            scripts = (window?.document && window.document.getElementsByTagName('script')),
             inlineScriptBlocks = [],
             parts;
 

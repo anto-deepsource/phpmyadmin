@@ -70,7 +70,7 @@ OpenLayers.Layer.XYZ = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * options - {Object} Hashtable of extra options to tag onto the layer
      */
     initialize: function(name, url, options) {
-        if (options && options.sphericalMercator || this.sphericalMercator) {
+        if (options?.sphericalMercator || this.sphericalMercator) {
             options = OpenLayers.Util.extend({
                 projection: "EPSG:900913",
                 numZoomLevels: 19
